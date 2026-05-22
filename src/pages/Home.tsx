@@ -183,7 +183,10 @@ export default function Home() {
       <section className={styles.industryStrip}>
         <div className={`container ${styles.industryInner}`}>
           <span className={styles.industryLabel}>Industries served</span>
-          <div className={styles.industryTags}>
+          <div
+            ref={industryReveal.ref}
+            className={`${styles.industryTags} ${styles.revealStagger} ${industryReveal.shown ? styles.revealStaggerShown : ''}`}
+          >
             {industries.map(ind => (
               <div key={ind.label} className={styles.industryTag}>
                 <ind.icon size={14} />
