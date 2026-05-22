@@ -115,6 +115,16 @@ export default function Home() {
   const [appPaused, setAppPaused] = useState(false);
   const appCount = applications.length;
 
+  const heroStatsReveal = useReveal<HTMLDivElement>();
+  const industryReveal = useReveal<HTMLDivElement>();
+  const productsHeadReveal = useReveal<HTMLDivElement>();
+  const productsGridReveal = useReveal<HTMLDivElement>();
+  const techReveal = useReveal<HTMLDivElement>();
+  const techRightReveal = useReveal<HTMLDivElement>();
+  const appsHeadReveal = useReveal<HTMLDivElement>();
+  const appsBodyReveal = useReveal<HTMLDivElement>();
+  const ctaReveal = useReveal<HTMLDivElement>();
+
   useEffect(() => {
     if (appPaused) return;
     const id = setInterval(() => setAppIndex(i => (i + 1) % appCount), 4500);
