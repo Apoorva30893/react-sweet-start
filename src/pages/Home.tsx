@@ -100,6 +100,19 @@ const trustItems = [
 ];
 
 export default function Home() {
+  const [appIndex, setAppIndex] = useState(0);
+  const [appPaused, setAppPaused] = useState(false);
+  const appCount = applications.length;
+
+  useEffect(() => {
+    if (appPaused) return;
+    const id = setInterval(() => setAppIndex(i => (i + 1) % appCount), 4500);
+    return () => clearInterval(id);
+  }, [appPaused, appCount]);
+
+  const goPrev = () => setAppIndex(i => (i - 1 + appCount) % appCount);
+  const goNext = () => setAppIndex(i => (i + 1) % appCount);
+
   return (
     <main>
       {/* Hero */}
