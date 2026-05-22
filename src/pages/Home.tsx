@@ -200,9 +200,6 @@ export default function Home() {
       {/* Products */}
       <section className={styles.section}>
         <div className="container">
-          <div className={styles.sectionHead}>
-            <div>
-              <div className="section-eyebrow">What we make</div>
           <div
             ref={productsHeadReveal.ref}
             className={`${styles.sectionHead} ${styles.reveal} ${productsHeadReveal.shown ? styles.revealShown : ''}`}
