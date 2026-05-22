@@ -309,7 +309,8 @@ export default function Home() {
             </Link>
           </div>
           <div
-            className={styles.appCarousel}
+            ref={appsBodyReveal.ref}
+            className={`${styles.appCarousel} ${styles.reveal} ${appsBodyReveal.shown ? styles.revealShown : ''}`}
             onMouseEnter={() => setAppPaused(true)}
             onMouseLeave={() => setAppPaused(false)}
           >
