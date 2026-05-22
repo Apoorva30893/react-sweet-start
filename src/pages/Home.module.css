@@ -809,3 +809,172 @@
   width: 24px;
   border-radius: 4px;
 }
+
+/* === Animations === */
+@keyframes kenBurns {
+  0%   { transform: scale(1.05) translate(0, 0); }
+  50%  { transform: scale(1.12) translate(-1.5%, -1%); }
+  100% { transform: scale(1.05) translate(0, 0); }
+}
+
+.heroBgImg {
+  animation: kenBurns 22s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+.revealShown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children reveal */
+.revealStagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.revealStaggerShown > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.revealStaggerShown > *:nth-child(1) { transition-delay: 0.05s; }
+.revealStaggerShown > *:nth-child(2) { transition-delay: 0.15s; }
+.revealStaggerShown > *:nth-child(3) { transition-delay: 0.25s; }
+.revealStaggerShown > *:nth-child(4) { transition-delay: 0.35s; }
+.revealStaggerShown > *:nth-child(5) { transition-delay: 0.45s; }
+.revealStaggerShown > *:nth-child(6) { transition-delay: 0.55s; }
+
+/* Product card image hover zoom */
+.prodCard .prodCardImgProduct {
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.prodCard:hover .prodCardImgProduct {
+  transform: scale(1.06) rotate(-1.5deg);
+}
+
+/* Shimmer sweep on product card */
+.prodCard {
+  position: relative;
+}
+.prodCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.prodCard:hover::after {
+  animation: shimmerSweep 0.9s ease-out;
+  opacity: 1;
+}
+@keyframes shimmerSweep {
+  0%   { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* Industry tag pop-in */
+.industryTag {
+  transition: border-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.industryTag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Tech card slide-in accent */
+.techCard {
+  position: relative;
+  overflow: hidden;
+}
+.techCard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--blue-light);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s ease-out;
+}
+.techCard:hover::before {
+  transform: scaleY(1);
+}
+
+/* CTA pulse glow */
+.ctaBtnPrimary {
+  position: relative;
+  overflow: hidden;
+}
+.ctaBtnPrimary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(74,123,167,0.3), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ctaBtnPrimary:hover::after {
+  opacity: 1;
+}
+
+/* Stat number subtle pulse on reveal */
+.heroStatNum {
+  display: inline-block;
+}
+
+/* Section title underline accent */
+.sectionTitle {
+  position: relative;
+  display: inline-block;
+}
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  border-radius: 2px;
+  transition: width 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
+}
+.revealShown .sectionTitle::after,
+.sectionHead.revealShown .sectionTitle::after {
+  width: 48px;
+}
+
+/* Carousel slide fade-in */
+.appSlide .appCard {
+  transition: transform 0.4s ease-out;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroBgImg { animation: none; }
+  .reveal, .revealStagger > * { transition: none; opacity: 1; transform: none; }
+  .prodCard::after { display: none; }
+}

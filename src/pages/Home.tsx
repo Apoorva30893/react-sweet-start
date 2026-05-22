@@ -2,6 +2,17 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ChevronLeft, ArrowRight, Settings, Gem, Layers, Wrench, Car, Plane, Zap, Droplets, Cpu, CircleCheck as CheckCircle2, Award, Clock, Target, Download, FileText } from 'lucide-react';
 import styles from './Home.module.css';
+import { useReveal, useCountUp } from '../hooks/useReveal';
+
+function StatItem({ value, label, start }: { value: string; label: string; start: boolean }) {
+  const display = useCountUp(value, start);
+  return (
+    <div className={styles.heroStat}>
+      <div className={styles.heroStatNum}>{display}</div>
+      <div className={styles.heroStatLabel}>{label}</div>
+    </div>
+  );
+}
 
 const stats = [
   { value: '5-axis', label: 'SAACKE Grinding' },
@@ -104,6 +115,16 @@ export default function Home() {
   const [appPaused, setAppPaused] = useState(false);
   const appCount = applications.length;
 
+  const heroStatsReveal = useReveal<HTMLDivElement>();
+  const industryReveal = useReveal<HTMLDivElement>();
+  const productsHeadReveal = useReveal<HTMLDivElement>();
+  const productsGridReveal = useReveal<HTMLDivElement>();
+  const techReveal = useReveal<HTMLDivElement>();
+  const techRightReveal = useReveal<HTMLDivElement>();
+  const appsHeadReveal = useReveal<HTMLDivElement>();
+  const appsBodyReveal = useReveal<HTMLDivElement>();
+  const ctaReveal = useReveal<HTMLDivElement>();
+
   useEffect(() => {
     if (appPaused) return;
     const id = setInterval(() => setAppIndex(i => (i + 1) % appCount), 4500);
@@ -147,12 +168,12 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className={styles.heroStats}>
+          <div
+            ref={heroStatsReveal.ref}
+            className={`${styles.heroStats} ${styles.revealStagger} ${heroStatsReveal.shown ? styles.revealStaggerShown : ''}`}
+          >
             {stats.map(s => (
-              <div key={s.value} className={styles.heroStat}>
-                <div className={styles.heroStatNum}>{s.value}</div>
-                <div className={styles.heroStatLabel}>{s.label}</div>
-              </div>
+              <StatItem key={s.value} value={s.value} label={s.label} start={heroStatsReveal.shown} />
             ))}
           </div>
         </div>
@@ -162,7 +183,10 @@ export default function Home() {
       <section className={styles.industryStrip}>
         <div className={`container ${styles.industryInner}`}>
           <span className={styles.industryLabel}>Industries served</span>
-          <div className={styles.industryTags}>
+          <div
+            ref={industryReveal.ref}
+            className={`${styles.industryTags} ${styles.revealStagger} ${industryReveal.shown ? styles.revealStaggerShown : ''}`}
+          >
             {industries.map(ind => (
               <div key={ind.label} className={styles.industryTag}>
                 <ind.icon size={14} />
@@ -176,7 +200,10 @@ export default function Home() {
       {/* Products */}
       <section className={styles.section}>
         <div className="container">
-          <div className={styles.sectionHead}>
+          <div
+            ref={productsHeadReveal.ref}
+            className={`${styles.sectionHead} ${styles.reveal} ${productsHeadReveal.shown ? styles.revealShown : ''}`}
+          >
             <div>
               <div className="section-eyebrow">What we make</div>
               <h2 className={styles.sectionTitle}>Product range</h2>
@@ -188,7 +215,10 @@ export default function Home() {
               View all products <ArrowRight size={14} />
             </Link>
           </div>
-          <div className={styles.prodGrid}>
+          <div
+            ref={productsGridReveal.ref}
+            className={`${styles.prodGrid} ${styles.revealStagger} ${productsGridReveal.shown ? styles.revealStaggerShown : ''}`}
+          >
             {products.map(p => (
               <Link to={`/products#${p.id}`} key={p.id} className={styles.prodCard}>
                 <div className={styles.prodCardImg} style={{ background: p.bg }}>
@@ -221,7 +251,10 @@ export default function Home() {
       <section className={styles.techSection}>
         <div className="container">
           <div className={styles.techGrid}>
-            <div className={styles.techLeft}>
+            <div
+              ref={techReveal.ref}
+              className={`${styles.techLeft} ${styles.reveal} ${techReveal.shown ? styles.revealShown : ''}`}
+            >
               <div className="section-eyebrow" style={{ background: 'rgba(74,123,167,0.2)', color: '#6E9DC4' }}>
                 Our equipment
               </div>
@@ -241,7 +274,10 @@ export default function Home() {
                 See all technology <ArrowRight size={14} />
               </Link>
             </div>
-            <div className={styles.techRight}>
+            <div
+              ref={techRightReveal.ref}
+              className={`${styles.techRight} ${styles.revealStagger} ${techRightReveal.shown ? styles.revealStaggerShown : ''}`}
+            >
               {machines.map(m => (
                 <div key={m.num} className={styles.techCard}>
                   <div className={styles.techCardNum}>{m.num}</div>
@@ -259,7 +295,10 @@ export default function Home() {
       {/* Applications */}
       <section className={styles.appSection}>
         <div className="container">
-          <div className={styles.sectionHead}>
+          <div
+            ref={appsHeadReveal.ref}
+            className={`${styles.sectionHead} ${styles.reveal} ${appsHeadReveal.shown ? styles.revealShown : ''}`}
+          >
             <div>
               <div className="section-eyebrow">Proven results</div>
               <h2 className={styles.sectionTitle}>Application case studies</h2>
@@ -270,7 +309,8 @@ export default function Home() {
             </Link>
           </div>
           <div
-            className={styles.appCarousel}
+            ref={appsBodyReveal.ref}
+            className={`${styles.appCarousel} ${styles.reveal} ${appsBodyReveal.shown ? styles.revealShown : ''}`}
             onMouseEnter={() => setAppPaused(true)}
             onMouseLeave={() => setAppPaused(false)}
           >
@@ -337,7 +377,10 @@ export default function Home() {
       {/* CTA Banner */}
       <section className={styles.ctaSection}>
         <div className="container">
-          <div className={styles.ctaInner}>
+          <div
+            ref={ctaReveal.ref}
+            className={`${styles.ctaInner} ${styles.reveal} ${ctaReveal.shown ? styles.revealShown : ''}`}
+          >
             <div className={styles.ctaText}>
               <h2 className={styles.ctaTitle}>Ready to optimise your machining process?</h2>
               <p className={styles.ctaSub}>
