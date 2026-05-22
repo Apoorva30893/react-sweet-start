@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Settings, Gem, Layers, Wrench, Car, Plane, Zap, Droplets, Cpu, CircleCheck as CheckCircle2, Award, Clock, Target, Download, FileText } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ArrowRight, Settings, Gem, Layers, Wrench, Car, Plane, Zap, Droplets, Cpu, CircleCheck as CheckCircle2, Award, Clock, Target, Download, FileText } from 'lucide-react';
 import styles from './Home.module.css';
 
 const stats = [
