@@ -168,12 +168,12 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className={styles.heroStats}>
+          <div
+            ref={heroStatsReveal.ref}
+            className={`${styles.heroStats} ${styles.revealStagger} ${heroStatsReveal.shown ? styles.revealStaggerShown : ''}`}
+          >
             {stats.map(s => (
-              <div key={s.value} className={styles.heroStat}>
-                <div className={styles.heroStatNum}>{s.value}</div>
-                <div className={styles.heroStatLabel}>{s.label}</div>
-              </div>
+              <StatItem key={s.value} value={s.value} label={s.label} start={heroStatsReveal.shown} />
             ))}
           </div>
         </div>
