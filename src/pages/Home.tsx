@@ -203,6 +203,12 @@ export default function Home() {
           <div className={styles.sectionHead}>
             <div>
               <div className="section-eyebrow">What we make</div>
+          <div
+            ref={productsHeadReveal.ref}
+            className={`${styles.sectionHead} ${styles.reveal} ${productsHeadReveal.shown ? styles.revealShown : ''}`}
+          >
+            <div>
+              <div className="section-eyebrow">What we make</div>
               <h2 className={styles.sectionTitle}>Product range</h2>
               <p className={styles.sectionSub}>
                 Three tool technologies, one manufacturing standard — all ground on German machinery in Bengaluru.
@@ -212,7 +218,10 @@ export default function Home() {
               View all products <ArrowRight size={14} />
             </Link>
           </div>
-          <div className={styles.prodGrid}>
+          <div
+            ref={productsGridReveal.ref}
+            className={`${styles.prodGrid} ${styles.revealStagger} ${productsGridReveal.shown ? styles.revealStaggerShown : ''}`}
+          >
             {products.map(p => (
               <Link to={`/products#${p.id}`} key={p.id} className={styles.prodCard}>
                 <div className={styles.prodCardImg} style={{ background: p.bg }}>
