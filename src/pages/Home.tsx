@@ -274,7 +274,10 @@ export default function Home() {
                 See all technology <ArrowRight size={14} />
               </Link>
             </div>
-            <div className={styles.techRight}>
+            <div
+              ref={techRightReveal.ref}
+              className={`${styles.techRight} ${styles.revealStagger} ${techRightReveal.shown ? styles.revealStaggerShown : ''}`}
+            >
               {machines.map(m => (
                 <div key={m.num} className={styles.techCard}>
                   <div className={styles.techCardNum}>{m.num}</div>
