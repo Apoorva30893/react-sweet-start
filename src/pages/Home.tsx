@@ -377,7 +377,10 @@ export default function Home() {
       {/* CTA Banner */}
       <section className={styles.ctaSection}>
         <div className="container">
-          <div className={styles.ctaInner}>
+          <div
+            ref={ctaReveal.ref}
+            className={`${styles.ctaInner} ${styles.reveal} ${ctaReveal.shown ? styles.revealShown : ''}`}
+          >
             <div className={styles.ctaText}>
               <h2 className={styles.ctaTitle}>Ready to optimise your machining process?</h2>
               <p className={styles.ctaSub}>
