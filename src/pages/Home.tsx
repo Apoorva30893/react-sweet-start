@@ -251,7 +251,10 @@ export default function Home() {
       <section className={styles.techSection}>
         <div className="container">
           <div className={styles.techGrid}>
-            <div className={styles.techLeft}>
+            <div
+              ref={techReveal.ref}
+              className={`${styles.techLeft} ${styles.reveal} ${techReveal.shown ? styles.revealShown : ''}`}
+            >
               <div className="section-eyebrow" style={{ background: 'rgba(74,123,167,0.2)', color: '#6E9DC4' }}>
                 Our equipment
               </div>
