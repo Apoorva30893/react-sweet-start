@@ -713,3 +713,99 @@
     font-size: 24px;
   }
 }
+
+/* Case studies carousel */
+.appCarousel {
+  position: relative;
+}
+
+.appTrackWrap {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.appTrack {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.appSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 4px;
+}
+
+.appSlide .appCard {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.appSlide .appCardImg {
+  height: 320px;
+}
+
+@media (max-width: 600px) {
+  .appSlide .appCardImg {
+    height: 200px;
+  }
+}
+
+.carBtn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  z-index: 2;
+}
+
+.carBtn:hover {
+  background: var(--blue);
+  color: #fff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carBtnPrev { left: -8px; }
+.carBtnNext { right: -8px; }
+
+@media (max-width: 900px) {
+  .carBtnPrev { left: 4px; }
+  .carBtnNext { right: 4px; }
+}
+
+.carDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.carDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border);
+  padding: 0;
+  transition: background 0.2s, width 0.2s;
+}
+
+.carDot:hover {
+  background: var(--steel);
+}
+
+.carDotActive {
+  background: var(--blue);
+  width: 24px;
+  border-radius: 4px;
+}

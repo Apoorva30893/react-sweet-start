@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Settings, Gem, Layers, Wrench, Car, Plane, Zap, Droplets, Cpu, CircleCheck as CheckCircle2, Award, Clock, Target, Download, FileText } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ArrowRight, Settings, Gem, Layers, Wrench, Car, Plane, Zap, Droplets, Cpu, CircleCheck as CheckCircle2, Award, Clock, Target, Download, FileText } from 'lucide-react';
 import styles from './Home.module.css';
 
 const stats = [
@@ -99,6 +100,19 @@ const trustItems = [
 ];
 
 export default function Home() {
+  const [appIndex, setAppIndex] = useState(0);
+  const [appPaused, setAppPaused] = useState(false);
+  const appCount = applications.length;
+
+  useEffect(() => {
+    if (appPaused) return;
+    const id = setInterval(() => setAppIndex(i => (i + 1) % appCount), 4500);
+    return () => clearInterval(id);
+  }, [appPaused, appCount]);
+
+  const goPrev = () => setAppIndex(i => (i - 1 + appCount) % appCount);
+  const goNext = () => setAppIndex(i => (i + 1) % appCount);
+
   return (
     <main>
       {/* Hero */}
@@ -255,27 +269,67 @@ export default function Home() {
               All case studies <ArrowRight size={14} />
             </Link>
           </div>
-          <div className={styles.appGrid}>
-            {applications.map(app => (
-              <div key={app.title} className={styles.appCard}>
-                <div className={styles.appCardImg}>
-                  <img src={app.img} alt={app.title} />
-                  <div className={styles.appCardImgOverlay} />
-                  <span className={styles.appBadge}>{app.industry}</span>
-                </div>
-                <div className={styles.appCardBody}>
-                  <h3 className={styles.appTitle}>{app.title}</h3>
-                  <div className={styles.appMeta}>
-                    <span><strong>Material:</strong> {app.material}</span>
-                    <span><strong>Tool:</strong> {app.tool}</span>
+          <div
+            className={styles.appCarousel}
+            onMouseEnter={() => setAppPaused(true)}
+            onMouseLeave={() => setAppPaused(false)}
+          >
+            <div className={styles.appTrackWrap}>
+              <div
+                className={styles.appTrack}
+                style={{ transform: `translateX(-${appIndex * 100}%)` }}
+              >
+                {applications.map(app => (
+                  <div key={app.title} className={styles.appSlide}>
+                    <div className={styles.appCard}>
+                      <div className={styles.appCardImg}>
+                        <img src={app.img} alt={app.title} />
+                        <div className={styles.appCardImgOverlay} />
+                        <span className={styles.appBadge}>{app.industry}</span>
+                      </div>
+                      <div className={styles.appCardBody}>
+                        <h3 className={styles.appTitle}>{app.title}</h3>
+                        <div className={styles.appMeta}>
+                          <span><strong>Material:</strong> {app.material}</span>
+                          <span><strong>Tool:</strong> {app.tool}</span>
+                        </div>
+                        <div className={styles.appResult}>
+                          <CheckCircle2 size={14} className={styles.appResultIcon} />
+                          <span>{app.result}</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className={styles.appResult}>
-                    <CheckCircle2 size={14} className={styles.appResultIcon} />
-                    <span>{app.result}</span>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <button
+              type="button"
+              aria-label="Previous case study"
+              className={`${styles.carBtn} ${styles.carBtnPrev}`}
+              onClick={goPrev}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              type="button"
+              aria-label="Next case study"
+              className={`${styles.carBtn} ${styles.carBtnNext}`}
+              onClick={goNext}
+            >
+              <ChevronRight size={20} />
+            </button>
+            <div className={styles.carDots}>
+              {applications.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Go to case study ${i + 1}`}
+                  className={`${styles.carDot} ${i === appIndex ? styles.carDotActive : ''}`}
+                  onClick={() => setAppIndex(i)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
