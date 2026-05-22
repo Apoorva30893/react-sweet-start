@@ -295,7 +295,10 @@ export default function Home() {
       {/* Applications */}
       <section className={styles.appSection}>
         <div className="container">
-          <div className={styles.sectionHead}>
+          <div
+            ref={appsHeadReveal.ref}
+            className={`${styles.sectionHead} ${styles.reveal} ${appsHeadReveal.shown ? styles.revealShown : ''}`}
+          >
             <div>
               <div className="section-eyebrow">Proven results</div>
               <h2 className={styles.sectionTitle}>Application case studies</h2>
