@@ -1,0 +1,686 @@
+.main {
+  padding-top: 72px;
+}
+
+.pageHero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--steel-dark) 100%);
+  padding: 64px 0 56px;
+}
+
+.pageTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+  max-width: 640px;
+}
+
+.pageSubtitle {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+  max-width: 560px;
+}
+
+/* Story */
+.storySection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.storyImg {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.storyImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.storyText {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.storyStats {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-light);
+}
+
+.storyStat {
+  text-align: center;
+}
+
+.storyStatNum {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.storyStatLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Values */
+.valuesSection {
+  background: var(--surface);
+  padding: 80px 0;
+}
+
+.valuesHead {
+  margin-bottom: 40px;
+}
+
+.valuesTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .valuesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.valueCard {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.valueCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.valueIconWrap {
+  width: 44px;
+  height: 44px;
+  background: var(--blue-xlight);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.valueTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.valueDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Location */
+.locationSection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .locationGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.locationTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.locationText {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.locationDetails {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.locationDetails li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.locationCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blue);
+  transition: gap 0.2s, color 0.2s;
+}
+
+.locationCta:hover {
+  color: var(--steel-dark);
+  gap: 10px;
+}
+
+.locationImgWrap {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.locationImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mission & Vision */
+.missionVisionSection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.missionVisionHead {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.missionVisionTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.missionVisionSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.missionVisionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .missionVisionGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card shell */
+.mvCard {
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 0;          /* remove old padding — header/body have their own */
+}
+
+.mvCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(43, 58, 82, 0.12);
+}
+
+/* Coloured header block */
+.mvCardHeader {
+  padding: 20px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.mvCard.mission .mvCardHeader { background: var(--navy); }
+.mvCard.vision  .mvCardHeader { background: var(--blue); }
+
+/* Icon box */
+.mvIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.mvLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 5px;
+}
+
+.mvTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.35;
+  margin: 0;
+  display: block;        /* ← ensure it's not display:none */
+  opacity: 1;
+}
+
+/* White body */
+.mvDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 20px 22px 16px;
+}
+
+.mvPoints {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 0 22px 22px;
+}
+
+.mvPoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.mvPointIcon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #1D9E75;    /* teal check to match screenshot */
+  opacity: 1;
+}
+/* Purpose & Philosophy */
+.purposeSection {
+  padding: 80px 0;
+  background: var(--surface);
+}
+
+.purposeHead {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.purposeTitle {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.purposeSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.philosophyText {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.philosophyText p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 600px;
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 900px) {
+  .principlesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.principleCard {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 28px;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+
+.principleCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.principleNum {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.principleIconWrap {
+  width: 48px;
+  height: 48px;
+  background: var(--blue-xlight);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.principleTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.principleDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.philosophyQuote {
+  text-align: left;
+  background: #fff;
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
+  padding: 24px 28px;
+  margin-top: 32px;
+}
+
+.philosophyQuote p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--blue);
+  font-style: italic;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+/* Manufacturing */
+.manufacturingSection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.manufacturingContent {
+  max-width: 700px;
+}
+
+.manufacturingTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.manufacturingSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.manufacturingList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: 10px;
+}
+
+.manufacturingList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.manufacturingList svg {
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.manufacturingNote {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Products */
+.productsSection {
+  padding: 80px 0;
+  background: var(--surface);
+}
+
+.productsContent {
+  max-width: 900px;
+}
+
+.productsTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.productsSub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.productCategory {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.productCategoryTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.productList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productList li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  position: relative;
+}
+
+.productList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.productsNote {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  text-align: left;
+}
+
+/* CTA */
+.ctaSection {
+  background: var(--blue);
+  padding: 64px 0;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.ctaSub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 28px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.ctaBtn:hover {
+  background: var(--blue-xlight);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 28px;
+  }
+  .missionVisionSection,
+  .purposeSection,
+  .productsSection,
+  .manufacturingSection,
+  .storySection,
+  .valuesSection,
+  .locationSection {
+    padding: 56px 0;
+  }
+  .missionVisionTitle,
+  .purposeTitle,
+  .productsTitle,
+  .manufacturingTitle {
+    font-size: 24px;
+  }
+  .principlesGrid {
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,213 @@
+.footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.6);
+  margin-top: auto;
+}
+
+.top {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.2fr 1fr;  /* ← add 5th column */
+  gap: 40px;
+}
+
+/* New column wrapper for Follow Us */
+.followCol {}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .brand { grid-column: 1 / -1; }
+  .followCol { grid-column: 1 / -1; }
+}
+
+@media (max-width: 540px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.brand {}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+  /* invert logo for dark bg — we'll use brightness filter for steel blue logo */
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.tagline {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+  max-width: 320px;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.social {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.social:hover {
+  background: var(--blue);
+  color: #fff;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  background: rgba(74,123,167,0.2);
+  border: 1px solid rgba(74,123,167,0.3);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.makeInIndiaImage {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-top: 20px;
+  opacity: 0.85;
+  transition: opacity 0.25s;
+}
+
+.makeInIndiaImage:hover {
+  opacity: 1;
+}
+
+.col {}
+
+.colTitle {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 16px;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--blue-light);
+}
+
+.contactList a {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+
+.contactList a:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+.bottom {
+  padding: 20px 0;
+}
+
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255,255,255,0.25);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.bottomLinks a {
+  color: rgba(255,255,255,0.25);
+  transition: color 0.2s;
+}
+
+.bottomLinks a:hover {
+  color: rgba(255,255,255,0.6);
+}
+
+
+
+/* Remove followUs and socials from brand — they go in their own col now */
+.socials {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 0;
+  flex-wrap: nowrap;        /* ← remove flex-wrap */
+  margin-top: 0;
+}
+
+.followUs {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 16px;
+  width: auto;              /* ← remove width:100% */
+}
+
