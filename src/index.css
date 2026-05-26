@@ -5,24 +5,25 @@
 }
 
 :root {
-  /* Brand colors — derived from Riddhi logo (steel blue-grey + dark navy) */
-  --navy: #1E2D45;
-  --navy-mid: #263650;
-  --blue: #4A7BA7;
-  --blue-light: #6E9DC4;
-  --blue-xlight: #EBF2F9;
-  --blue-pale: #F5F8FC;
-  --steel: #5B7FA3;
-  --steel-dark: #3D5A7A;
+  /* Brand colors — Fraisa-inspired deep navy + steel blue */
+  --navy: #002855;
+  --navy-mid: #003B73;
+  --blue: #002855;
+  --blue-light: #3D6FA0;
+  --blue-xlight: #E6EDF4;
+  --blue-pale: #F2F5F8;
+  --steel: #4A6786;
+  --steel-dark: #001E40;
 
   /* Neutrals */
-  --dark: #111A27;
-  --text: #1E2D45;
-  --text-secondary: #4B5E7A;
-  --text-muted: #7A8FA8;
-  --border: #C8D9EA;
-  --border-light: #DDE8F2;
-  --surface: #F5F8FC;
+  --dark: #001E40;
+  --text: #1A2A40;
+  --text-secondary: #3D4F66;
+  --text-muted: #6B7A8F;
+  --border: #C8D2DC;
+  --border-light: #E0E6EC;
+  --surface: #F2F5F8;
+  --surface-blue: linear-gradient(180deg, #D9E4EE 0%, #F2F5F8 100%);
   --white: #FFFFFF;
 
   /* Semantic */
@@ -32,10 +33,15 @@
   --warning-bg: #FBF4E6;
   --error: #B02A1A;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(30,45,69,.08), 0 1px 2px rgba(30,45,69,.06);
-  --shadow-md: 0 4px 12px rgba(30,45,69,.10), 0 2px 4px rgba(30,45,69,.06);
-  --shadow-lg: 0 10px 30px rgba(30,45,69,.12), 0 4px 8px rgba(30,45,69,.06);
+  /* Shadows — Fraisa uses very flat design, minimal shadows */
+  --shadow-sm: 0 1px 2px rgba(0,40,85,.06);
+  --shadow-md: 0 2px 6px rgba(0,40,85,.08);
+  --shadow-lg: 0 4px 16px rgba(0,40,85,.10);
+
+  /* Radii — sharp / minimal */
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
 }
 
 html {
@@ -43,7 +49,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
@@ -61,8 +67,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.25;
-  color: var(--text);
+  line-height: 1.2;
+  color: var(--navy);
+  letter-spacing: -0.005em;
 }
 
 a {
@@ -97,24 +104,21 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--blue-xlight);
-  color: var(--blue);
+  background: transparent;
+  color: var(--navy);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 5px 12px;
-  border-radius: 20px;
-  margin-bottom: 16px;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 14px;
+  border-left: 3px solid var(--navy);
+  padding-left: 10px;
 }
 
 .section-eyebrow::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--blue);
-  flex-shrink: 0;
+  content: none;
 }
 
 /* Animations */
