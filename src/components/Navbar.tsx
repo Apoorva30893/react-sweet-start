@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, Search } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
