@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Mail, Search } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Industries', href: '/industries' },
   { label: 'Technology', href: '/technology' },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -26,59 +27,69 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.inner}>
-        <Link to="/" className={styles.logo}>
-          <img src="/image001.png" alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
-        </Link>
-
-        <nav className={styles.nav} aria-label="Main navigation">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={`${styles.navLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className={styles.actions}>
-          <a href="tel:+919945909155" className={styles.phone}>
-            <Phone size={14} />
-            <span>+91 99459 09155</span>
+    <>
+      <div className={styles.topBar}>
+        <div className={styles.topBarInner}>
+          <a href="tel:+919945909155" className={styles.topBarLink}>
+            <Phone size={13} /> +91 99459 09155
           </a>
-          <Link to="/contact" className={styles.cta}>
-            Request Quote
-          </Link>
-          <button
-            className={styles.menuBtn}
-            onClick={() => setOpen(v => !v)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <a href="mailto:sales@rmtt.co.in" className={styles.topBarLink}>
+            <Mail size={13} /> sales@rmtt.co.in
+          </a>
         </div>
       </div>
 
-      {open && (
-        <div className={styles.mobileMenu}>
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={`${styles.mobileLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link to="/contact" className={styles.mobileCta}>
-            Request a Quote
+      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+        <div className={styles.inner}>
+          <Link to="/" className={styles.logo}>
+            <img src="/image001.png" alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
           </Link>
+
+          <nav className={styles.nav} aria-label="Main navigation">
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`${styles.navLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className={styles.actions}>
+            <Link to="/contact" className={styles.cta}>
+              Request Quote
+            </Link>
+            <button
+              className={styles.menuBtn}
+              onClick={() => setOpen(v => !v)}
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
-      )}
-    </header>
+
+        {open && (
+          <div className={styles.mobileMenu}>
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`${styles.mobileLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link to="/contact" className={styles.mobileCta}>
+              Request a Quote
+            </Link>
+          </div>
+        )}
+      </header>
+    </>
   );
 }
+
