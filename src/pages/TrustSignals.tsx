@@ -134,7 +134,7 @@ const trustStats = [
 ];
 
 // ── COMPONENT ────────────────────────────────────────────────────────────────
-export default function TrustSignals(): JSX.Element {
+export default function TrustSignals() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [downloading, setDownloading] = useState<string | null>(null);
 
