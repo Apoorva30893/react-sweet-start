@@ -1,6 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useCallback, useRef, type JSX } from 'react';
+import { ChevronLeft, ChevronRight} from 'lucide-react';
 import styles from './ProductShowcase.module.css';
 
 // ── TYPES ────────────────────────────────────────────────────────────────────

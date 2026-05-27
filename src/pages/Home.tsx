@@ -2,25 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ChevronLeft, ArrowRight, Settings, Gem, Layers, Wrench, Car, Plane, Zap, Droplets, Cpu, CircleCheck as CheckCircle2, Award, Clock, Target, Download, FileText } from 'lucide-react';
 import styles from './Home.module.css';
-import { useReveal, useCountUp } from '../hooks/useReveal';
+import { useReveal} from '../hooks/useReveal';
 import ProductShowcase from './ProductShowcase';
 
-function StatItem({ value, label, start }: { value: string; label: string; start: boolean }) {
-  const display = useCountUp(value, start);
-  return (
-    <div className={styles.heroStat}>
-      <div className={styles.heroStatNum}>{display}</div>
-      <div className={styles.heroStatLabel}>{label}</div>
-    </div>
-  );
-}
-
-const stats = [
-  { value: '5-axis', label: 'SAACKE Grinding' },
-  { value: '±0.002mm', label: 'Tolerance' },
-  { value: '3 Types', label: 'Tool Technologies' },
-  { value: 'Bengaluru', label: 'Made in India' },
-];
 
 const products = [
   {
@@ -116,7 +100,7 @@ export default function Home() {
   const [appPaused, setAppPaused] = useState(false);
   const appCount = applications.length;
 
-  const heroStatsReveal = useReveal<HTMLDivElement>();
+  
   const industryReveal = useReveal<HTMLDivElement>();
   const productsHeadReveal = useReveal<HTMLDivElement>();
   const productsGridReveal = useReveal<HTMLDivElement>();
