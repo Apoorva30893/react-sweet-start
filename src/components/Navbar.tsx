@@ -4,10 +4,10 @@ import { Menu, X, Phone, Mail } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
-  { label: 'Products', href: '/products' },
-  { label: 'Industries', href: '/industries' },
-  { label: 'Technology', href: '/technology' },
   { label: 'About', href: '/about' },
+  { label: 'Products', href: '/products' },
+  { label: 'Applcations', href: '/applications' },
+  { label: 'Services', href: '/services' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -42,7 +42,7 @@ export default function Navbar() {
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.inner}>
           <Link to="/" className={styles.logo}>
-            <img src="/image001.png" alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
+            <img src="/1.png" alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
           </Link>
 
           <nav className={styles.nav} aria-label="Main navigation">

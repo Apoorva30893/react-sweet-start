@@ -233,6 +233,7 @@
 /* Section */
 .section {
   padding: 80px 0;
+  background: #F2F4F8;          /* ← light warm-grey, matches MAPAL */
 }
 
 .sectionHead {
@@ -244,12 +245,29 @@
   flex-wrap: wrap;
 }
 
+.section-eyebrow {
+  display: block;              /* ← was inline-flex or inline-block */
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;          /* ← space between eyebrow and title */
+}
+
+/* Eyebrow sits above title as its own line */
+.sectionHead .section-eyebrow,
+.sectionHead > div > .section-eyebrow {
+  display: block;              /* ← force block so title drops below */
+  margin-bottom: 6px;
+}
 .sectionTitle {
   font-size: 30px;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 10px;
   letter-spacing: -0.02em;
+  margin-top: 0; 
 }
 
 .sectionSub {
@@ -276,61 +294,64 @@
 }
 
 /* Products */
+/* ── Product grid — 3 cols, more generous gap ── */
 .prodGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 @media (max-width: 900px) {
-  .prodGrid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .prodGrid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 580px) {
-  .prodGrid {
-    grid-template-columns: 1fr;
-  }
+  .prodGrid { grid-template-columns: 1fr; }
 }
 
+/* ── Card shell ── */
 .prodCard {
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
+  border: none;                  /* ← remove border, let bg do the work */
+  border-radius: 4px;            /* ← MAPAL uses very small radius */
   overflow: hidden;
   background: #fff;
-  transition: box-shadow 0.25s, transform 0.2s, border-color 0.2s;
+  transition: box-shadow 0.25s, transform 0.2s;
   display: block;
+  box-shadow: 0 1px 4px rgba(43,58,82,0.07);
 }
 
 .prodCard:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 28px rgba(43,58,82,0.13);
   transform: translateY(-4px);
-  border-color: var(--border);
 }
 
+/* ── Image panel — large, prominent, light grey bg ── */
 .prodCardImg {
-  height: 130px;
+  height: 280px;                 /* ← was 130px — nearly doubled */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s;
   position: relative;
+  background: #EAECF0;           /* ← cool light grey, like MAPAL */
 }
 
 .prodCardImgProduct {
-  max-height: 120px;
-  max-width: 100%;
+  max-height: 240px;             /* ← was 120px */
+  max-width: 88%;
   object-fit: contain;
   width: auto;
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.prodCard:hover .prodCardImg {
-  opacity: 0.85;
+.prodCard:hover .prodCardImgProduct {
+  transform: scale(1.06) rotate(-1deg);
 }
 
+/* ── Card body — sits below large image ── */
 .prodCardBody {
-  padding: 20px;
+  padding: 22px 22px 24px;
+  border-top: 1px solid #EAECF0;
 }
 
 .prodCat {
@@ -338,55 +359,57 @@
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .prodName {
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 18px;               /* ← slightly larger */
+  font-weight: 700;
   color: var(--navy);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  line-height: 1.25;
 }
 
 .prodDesc {
   font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 14px;
+  line-height: 1.65;
+  margin-bottom: 16px;
 }
 
 .prodTags {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .prodTag {
   font-size: 11px;
-  background: var(--surface);
+  background: #F2F4F8;
   color: var(--text-secondary);
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 3px 8px;
-  border: 1px solid var(--border-light);
+  border: 1px solid #E0E4EC;
 }
 
 .prodLink {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   font-size: 13px;
   font-weight: 600;
   transition: gap 0.2s;
 }
 
 .prodCard:hover .prodLink {
-  gap: 7px;
+  gap: 8px;
 }
 
 /* Technology */
 .techSection {
-  background: var(--navy);
+  background:  #D9E4EE;
+  /* linear-gradient(135deg, rgba(74, 123, 167, 0.4) 0% 0%, var(--steel-dark) 100%); */
   padding: 80px 0;
 }
 
@@ -409,14 +432,14 @@
 .techTitle {
   font-size: 30px;
   font-weight: 700;
-  color: #fff;
+  color: var(--navy);
   margin-bottom: 12px;
   letter-spacing: -0.02em;
 }
 
 .techSub {
   font-size: 15px;
-  color: rgba(255,255,255,0.6);
+  color: var(--test-secondary);
   line-height: 1.7;
   margin-bottom: 28px;
 }
@@ -433,11 +456,11 @@
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  color: rgba(255,255,255,0.75);
+  color: var(--test-secondary);
 }
 
 .trustIcon {
-  color: var(--blue-light);
+  color: var(--blue);
   flex-shrink: 0;
 }
 
@@ -453,7 +476,7 @@
 
 .techLink:hover {
   gap: 9px;
-  color: #fff;
+  color: rgba(74,123,167,0.4);
 }
 
 .techRight {
@@ -464,7 +487,7 @@
 
 .techCard {
   background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(36, 58, 158, 0.1);
   border-radius: 10px;
   padding: 16px;
   transition: background 0.2s, border-color 0.2s;
@@ -478,7 +501,7 @@
 .techCardNum {
   font-size: 11px;
   font-weight: 700;
-  color: var(--blue-light);
+  color: var(--blue);
   letter-spacing: 0.08em;
   margin-bottom: 8px;
 }
@@ -486,14 +509,14 @@
 .techCardName {
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
+  color: var(--navy);
   margin-bottom: 5px;
   line-height: 1.3;
 }
 
 .techCardDetail {
   font-size: 12px;
-  color: rgba(255,255,255,0.45);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
@@ -617,7 +640,8 @@
 
 /* CTA */
 .ctaSection {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--steel-dark) 100%);
+  background:  #D9E4EE;
+  /* linear-gradient(135deg, rgba(74, 123, 167, 0.4) 0% 0%, var(--steel-dark) 100%); */
   padding: 80px 0;
 }
 
@@ -637,14 +661,14 @@
 .ctaTitle {
   font-size: 28px;
   font-weight: 700;
-  color: #fff;
+  color: var(--navy);
   margin-bottom: 10px;
   letter-spacing: -0.02em;
 }
 
 .ctaSub {
   font-size: 15px;
-  color: rgba(255,255,255,0.65);
+  color: var(--text-secondary);
   line-height: 1.65;
   max-width: 500px;
 }
@@ -678,8 +702,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  color: rgba(255,255,255,0.85);
+  background: #fff;
+  color: var(--navy);
   font-size: 15px;
   font-weight: 500;
   padding: 13px 24px;

@@ -74,21 +74,79 @@ const values = [
 export default function About() {
   return (
     <main className={styles.main}>
-      <section className={styles.pageHero}>
-        <div className="container">
-          <div className="section-eyebrow">Who we are</div>
-          <h1 className={styles.pageTitle}>About Riddhi Machine Tool Technology</h1>
-          <p className={styles.pageSubtitle}>
-            A Bengaluru-based precision metal cutting tools manufacturer delivering solid carbide and PCD solutions through advanced and innovative technologies, aligned with the Make in India vision.
-          </p>
+      {/* ── ABOUT HERO — MAPAL split style ── */}
+<section className={styles.pageHero}>
+  <div className={styles.pageHeroGrid}>
+
+    {/* LEFT — text */}
+    <div className={styles.pageHeroLeft}>
+      <div className="section-eyebrow" style={{
+        background: 'rgba(74,123,167,0.18)',
+        color: '#6B8FBF',
+        border: '1px solid rgba(74,123,167,0.3)',
+        borderRadius: '4px',
+        padding: '4px 10px',
+        display: 'inline-block',
+        marginBottom: '20px',
+      }}>
+        Who we are
+      </div>
+
+      <h1 className={styles.pageTitle}>
+        Riddhi Machine<br />Tool Technology
+      </h1>
+
+      <p className={styles.pageSubtitle}>
+        Riddhi Machine Tool Technology is a Bengaluru-based precision metal cutting
+        tools manufacturer delivering solid carbide and PCD solutions through advanced
+        and innovative technologies.
+      </p>
+      <p className={styles.pageSubtitleSecond}>
+        The company designs and manufactures using state-of-the-art CNC, 5-axis SAACKE
+        grinding, and VOLLMER Wire EDM machines, serving the automotive, aerospace, and
+        precision engineering industries, aligned with the vision of{' '}
+        <strong>"Make in India."</strong>
+      </p>
+
+      {/* Key facts strip */}
+      <div className={styles.heroFacts}>
+        <div className={styles.heroFact}>
+          <div className={styles.heroFactVal}>5-axis</div>
+          <div className={styles.heroFactLbl}>SAACKE grinding</div>
         </div>
-      </section>
+        <div className={styles.heroFactDivider} />
+        <div className={styles.heroFact}>
+          <div className={styles.heroFactVal}>PCD + SC</div>
+          <div className={styles.heroFactLbl}>Tool technologies</div>
+        </div>
+        <div className={styles.heroFactDivider} />
+        <div className={styles.heroFact}>
+          <div className={styles.heroFactVal}>Bengaluru</div>
+          <div className={styles.heroFactLbl}>Made in India</div>
+        </div>
+      </div>
+    </div>
+
+    {/* RIGHT — image in contained square */}
+<div className={styles.pageHeroRight} style={{ position: 'relative' }}>
+  <img
+    src="/0.jpg"
+    alt="RMTT SAACKE CNC grinding machine in operation"
+    className={styles.pageHeroImg}
+  />
+  <div className={styles.pageHeroBadge}>
+    <img src="/2.jpg" alt="Make in India" className={styles.makeInIndiaImg} />
+  </div>
+</div>
+
+  </div>
+</section>
 
       {/* Mission & Vision */}
       <section className={styles.missionVisionSection}>
         <div className="container">
           <div className={styles.missionVisionHead}>
-            <div className="section-eyebrow">Who we are</div>
+            <div className="section-eyebrow">Our goals</div>
             <h2 className={styles.missionVisionTitle}>Mission & vision</h2>
             <p className={styles.missionVisionSub}>
               Two commitments that guide every product we manufacture and every partnership we build.

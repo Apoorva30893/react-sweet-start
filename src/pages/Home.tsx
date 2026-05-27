@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, ChevronLeft, ArrowRight, Settings, Gem, Layers, Wrench, Car, Plane, Zap, Droplets, Cpu, CircleCheck as CheckCircle2, Award, Clock, Target, Download, FileText } from 'lucide-react';
 import styles from './Home.module.css';
 import { useReveal, useCountUp } from '../hooks/useReveal';
+import ProductShowcase from './ProductShowcase';
 
 function StatItem({ value, label, start }: { value: string; label: string; start: boolean }) {
   const display = useCountUp(value, start);
@@ -136,16 +137,9 @@ export default function Home() {
 
   return (
     <main>
+      <ProductShowcase />
       {/* Hero */}
-      <section className={styles.hero}>
-        <div className={styles.heroBg}>
-          <img
-            src="/0.jpg"
-            alt="Riddhi precision machining equipment"
-            className={styles.heroBgImg}
-          />
-          <div className={styles.heroBgOverlay} />
-        </div>
+      {/* <section className={styles.hero}>
         <div className={`container ${styles.heroContent}`}>
           <div className={styles.heroText}>
             <div className="section-eyebrow">Make in India · German Standards</div>
@@ -157,16 +151,6 @@ export default function Home() {
             <p className={styles.heroSub}>
               Solid carbide, PCD and brazed carbide solutions manufactured on 5-axis SAACKE grinding and VOLLMER Wire EDM — serving automotive, aerospace and precision engineering.
             </p>
-            <div className={styles.heroBtns}>
-              <Link to="/contact" className={styles.btnPrimary}>
-                <FileText size={16} />
-                Request a Quote
-              </Link>
-              <Link to="/products" className={styles.btnOutline}>
-                Explore Products
-                <ArrowRight size={16} />
-              </Link>
-            </div>
           </div>
           <div
             ref={heroStatsReveal.ref}
@@ -177,7 +161,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Industry strip */}
       <section className={styles.industryStrip}>
@@ -221,7 +205,7 @@ export default function Home() {
           >
             {products.map(p => (
               <Link to={`/products#${p.id}`} key={p.id} className={styles.prodCard}>
-                <div className={styles.prodCardImg} style={{ background: p.bg }}>
+                <div className={styles.prodCardImg}>
                   {p.image ? (
                     <img src={p.image} alt={p.name} className={styles.prodCardImgProduct} />
                   ) : (
@@ -255,7 +239,7 @@ export default function Home() {
               ref={techReveal.ref}
               className={`${styles.techLeft} ${styles.reveal} ${techReveal.shown ? styles.revealShown : ''}`}
             >
-              <div className="section-eyebrow" style={{ background: 'rgba(74,123,167,0.2)', color: '#6E9DC4' }}>
+              <div className="section-eyebrow" style={{ background: 'rgba(74,123,167,0.2)', color: '#447199' }}>
                 Our equipment
               </div>
               <h2 className={styles.techTitle}>Manufacturing technology</h2>

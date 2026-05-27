@@ -2,25 +2,176 @@
   padding-top: 72px;
 }
 
+/* ── ABOUT HERO ── */
 .pageHero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--steel-dark) 100%);
-  padding: 64px 0 56px;
+  background: #F2F4F8;           /* ← light grey bg for whole section */
+  padding: 0;
+  overflow: hidden;
+}
+
+.pageHeroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  align-items: center;           /* ← vertically centre both sides */
+}
+
+@media (max-width: 900px) {
+  .pageHeroGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LEFT — light panel */
+.pageHeroLeft {
+  padding: 64px 52px 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #F2F4F8;           /* ← light blue-grey, not dark navy */
+  position: relative;
+  overflow: hidden;
+}
+
+/* remove dot grid — not needed on light bg */
+.pageHeroLeft::before {
+  display: none;
 }
 
 .pageTitle {
-  font-size: 40px;
+  font-size: clamp(26px, 3vw, 42px);
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 14px;
+  color: #1A2535;                /* ← dark navy on light bg */
+  margin-bottom: 20px;
   letter-spacing: -0.02em;
-  max-width: 640px;
+  line-height: 1.18;
 }
 
 .pageSubtitle {
-  font-size: 16px;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.65;
-  max-width: 560px;
+  font-size: 15px;
+  color: #3D4F6B;                /* ← readable dark slate */
+  line-height: 1.72;
+  margin-bottom: 12px;
+  max-width: 440px;
+}
+
+.pageSubtitleSecond {
+  font-size: 14px;
+  color: #6B7A99;                /* ← softer for secondary text */
+  line-height: 1.72;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+
+.pageSubtitleSecond strong {
+  color: #2B3A52;
+  font-weight: 600;
+}
+
+/* eyebrow on light bg */
+.pageHeroLeft .section-eyebrow {
+  background: rgba(74,123,167,0.1);
+  color: #4A7BA7;
+  border: 1px solid rgba(74,123,167,0.25);
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+/* Key facts row */
+.heroFacts {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding-top: 24px;
+  border-top: 1px solid #D0DCF0; /* ← light border on light bg */
+}
+
+.heroFact {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.heroFact:not(:first-child) {
+  padding-left: 20px;
+}
+
+.heroFactVal {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1A2535;                /* ← dark on light */
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.heroFactLbl {
+  font-size: 11px;
+  color: #8A9BB0;
+  letter-spacing: 0.03em;
+}
+
+.heroFactDivider {
+  width: 1px;
+  height: 36px;
+  background: #D0DCF0;
+  flex-shrink: 0;
+}
+
+/* RIGHT — image in a contained square box with margin */
+.pageHeroRight {
+  padding: 32px;                  /* ← margin around image */
+  background: #F2F4F8;            /* same as section bg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageHeroImg {
+  width: 100%;
+  height: 100%;
+  max-width: 420px;               /* ← contained, not full bleed */
+  aspect-ratio: 4/ 4;            /* ← square */
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-radius: 14px;            /* ← soft rounded square */
+  border: 1px solid #D0DCF0;      /* ← light border/frame */
+  box-shadow: 0 4px 24px rgba(43,58,82,0.1);
+  transition: transform 0.4s ease;
+}
+
+.pageHeroRight:hover .pageHeroImg {
+  transform: scale(1.02);
+}
+
+/* Make in India badge — below image, not overlaid */
+.pageHeroBadge {
+  position: absolute;             /* keep as overlay but smaller */
+  bottom: 40px;
+  right: 40px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(4px);
+  border: 1px solid #D0DCF0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(43,58,82,0.08);
+}
+
+.makeInIndiaImg {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .pageHeroRight {
+    padding: 24px;
+  }
+  .pageHeroLeft {
+    padding: 40px 24px;
+  }
 }
 
 /* Story */
