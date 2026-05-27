@@ -1,11 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 import styles from './Navbar.module.css';
 
-const navLinks = [
+const productOptions = [
+  { label: 'Solid Carbide', href: '/products#solid-carbide' },
+  { label: 'PCD', href: '/products#pcd' },
+  { label: 'Brazed Carbide', href: '/products#brazed' },
+];
+
+const navLinks: Array<{ label: string; href: string; dropdown?: typeof productOptions }> = [
   { label: 'About', href: '/about' },
-  { label: 'Products', href: '/products' },
+  { label: 'Products', href: '/products', dropdown: productOptions },
   { label: 'Applcations', href: '/applications' },
   { label: 'Services', href: '/services' },
   { label: 'Contact', href: '/contact' },
@@ -14,7 +20,9 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const location = useLocation();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -24,7 +32,17 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false);
+    setProductsOpen(false);
   }, [location]);
+
+  const openDropdown = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setProductsOpen(true);
+  };
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setProductsOpen(false), 150);
+  };
 
   return (
     <>
@@ -46,15 +64,43 @@ export default function Navbar() {
           </Link>
 
           <nav className={styles.nav} aria-label="Main navigation">
-            {navLinks.map(link => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`${styles.navLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map(link =>
+              link.dropdown ? (
+                <div
+                  key={link.href}
+                  className={styles.navItem}
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={scheduleClose}
+                >
+                  <Link
+                    to={link.href}
+                    className={`${styles.navLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
+                    aria-haspopup="true"
+                    aria-expanded={productsOpen}
+                  >
+                    {link.label}
+                    <ChevronDown size={14} style={{ marginLeft: 4, verticalAlign: 'middle' }} />
+                  </Link>
+                  {productsOpen && (
+                    <div className={styles.dropdown} onMouseEnter={openDropdown} onMouseLeave={scheduleClose}>
+                      {link.dropdown.map(opt => (
+                        <Link key={opt.href} to={opt.href} className={styles.dropdownItem}>
+                          {opt.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`${styles.navLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className={styles.actions}>
@@ -75,13 +121,23 @@ export default function Navbar() {
         {open && (
           <div className={styles.mobileMenu}>
             {navLinks.map(link => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`${styles.mobileLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href}>
+                <Link
+                  to={link.href}
+                  className={`${styles.mobileLink} ${location.pathname.startsWith(link.href) ? styles.active : ''}`}
+                >
+                  {link.label}
+                </Link>
+                {link.dropdown && (
+                  <div className={styles.mobileSubMenu}>
+                    {link.dropdown.map(opt => (
+                      <Link key={opt.href} to={opt.href} className={styles.mobileSubLink}>
+                        {opt.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <Link to="/contact" className={styles.mobileCta}>
               Request a Quote
@@ -92,4 +148,3 @@ export default function Navbar() {
     </>
   );
 }
-
