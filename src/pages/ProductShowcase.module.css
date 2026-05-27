@@ -6,9 +6,10 @@
 .showcase {
   position: relative;
   width: 100%;
-  height: 88vh;
+  height: calc(88vh - 100px);
   min-height: 520px;
   max-height: 780px;
+  margin-top: 100px;
   overflow: hidden;
   background:  #D9E4EE;           /* 1. WHITE background */
 }
