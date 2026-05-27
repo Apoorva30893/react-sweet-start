@@ -360,7 +360,13 @@ export default function Home() {
                 <FileText size={16} />
                 Request a Quote
               </Link>
-              <a href="#" className={styles.ctaBtnSecondary}>
+              <a
+                href="/RMTT_PPT.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.ctaBtnSecondary}
+              >
                 <Download size={16} />
                 Download Catalogue
               </a>
