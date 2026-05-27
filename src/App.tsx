@@ -7,6 +7,7 @@ import Industries from './pages/Industries';
 import Technology from './pages/Technology';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import TrustSignals from './pages/TrustSignals';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/services" element={<Technology />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/downloads" element={<TrustSignals />} />
       </Routes>
       <Footer />
     </BrowserRouter>
