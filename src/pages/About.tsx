@@ -72,7 +72,36 @@ const values = [
   },
 ];
 
+const leaders = [
+  {
+    name: 'Mr. Suresh Kumar',
+    role: 'Founder & Managing Director',
+    img: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600',
+    bio: 'With over three decades in precision tooling, our founder established RMTT with a vision to bring world-class cutting tool manufacturing to India — combining German engineering standards with the Make in India movement.',
+  },
+  {
+    name: 'Mrs. Lakshmi Suresh',
+    role: 'Director — Operations',
+    img: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600',
+    bio: 'Leading day-to-day operations and quality systems, she ensures every tool that leaves the facility meets the tightest tolerance and consistency standards expected by global OEMs.',
+  },
+  {
+    name: 'Mr. Karthik R.',
+    role: 'Director — Technology',
+    img: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=600',
+    bio: 'Driving R&D and process innovation across PCD, solid carbide, and brazed tooling — translating customer application challenges into engineered cutting tool solutions.',
+  },
+];
+
 export default function About() {
+  const [leaderIdx, setLeaderIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setLeaderIdx(i => (i + 1) % leaders.length), 5000);
+    return () => clearInterval(t);
+  }, []);
+  const leader = leaders[leaderIdx];
+  const prev = () => setLeaderIdx(i => (i - 1 + leaders.length) % leaders.length);
+  const next = () => setLeaderIdx(i => (i + 1) % leaders.length);
   return (
     <main className={styles.main}>
       {/* ── ABOUT HERO — MAPAL split style ── */}
