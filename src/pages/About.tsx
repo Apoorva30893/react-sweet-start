@@ -1,5 +1,6 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CircleCheck as CheckCircle2, MapPin, Users, Zap, Cpu, Lightbulb, Award, Eye, Target } from 'lucide-react';
+import { ArrowRight, CircleCheck as CheckCircle2, MapPin, Users, Zap, Cpu, Lightbulb, Award, Eye, Target, ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from './About.module.css';
 
 const missionVision = [
@@ -71,7 +72,36 @@ const values = [
   },
 ];
 
+const leaders = [
+  {
+    name: 'Mr. Suresh Kumar',
+    role: 'Founder & Managing Director',
+    img: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=600',
+    bio: 'With over three decades in precision tooling, our founder established RMTT with a vision to bring world-class cutting tool manufacturing to India — combining German engineering standards with the Make in India movement.',
+  },
+  {
+    name: 'Mrs. Lakshmi Suresh',
+    role: 'Director — Operations',
+    img: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600',
+    bio: 'Leading day-to-day operations and quality systems, she ensures every tool that leaves the facility meets the tightest tolerance and consistency standards expected by global OEMs.',
+  },
+  {
+    name: 'Mr. Karthik R.',
+    role: 'Director — Technology',
+    img: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=600',
+    bio: 'Driving R&D and process innovation across PCD, solid carbide, and brazed tooling — translating customer application challenges into engineered cutting tool solutions.',
+  },
+];
+
 export default function About() {
+  const [leaderIdx, setLeaderIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setLeaderIdx(i => (i + 1) % leaders.length), 5000);
+    return () => clearInterval(t);
+  }, []);
+  const leader = leaders[leaderIdx];
+  const prev = () => setLeaderIdx(i => (i - 1 + leaders.length) % leaders.length);
+  const next = () => setLeaderIdx(i => (i + 1) % leaders.length);
   return (
     <main className={styles.main}>
       {/* ── ABOUT HERO — MAPAL split style ── */}
@@ -135,7 +165,7 @@ export default function About() {
     className={styles.pageHeroImg}
   />
   <div className={styles.pageHeroBadge}>
-    <img src="/2.jpg" alt="Make in India" className={styles.makeInIndiaImg} />
+    <img src="/2.png" alt="Make in India" className={styles.makeInIndiaImg} />
   </div>
 </div>
 
@@ -350,6 +380,51 @@ export default function About() {
                 className={styles.locationImg}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Carousel */}
+      <section className={styles.leadershipSection}>
+        <div className="container">
+          <div className={styles.leadershipHead}>
+            <div className="section-eyebrow">Leadership</div>
+            <h2 className={styles.leadershipTitle}>Founder & directors</h2>
+            <p className={styles.leadershipSub}>
+              Meet the people who shape RMTT's vision, engineering and customer commitment.
+            </p>
+          </div>
+
+          <div className={styles.leaderCarousel}>
+            <button className={styles.carouselArrow} onClick={prev} aria-label="Previous">
+              <ChevronLeft size={22} />
+            </button>
+
+            <div className={styles.leaderCard} key={leader.name}>
+              <div className={styles.leaderImgWrap}>
+                <img src={leader.img} alt={leader.name} className={styles.leaderImg} />
+              </div>
+              <div className={styles.leaderBody}>
+                <div className={styles.leaderRole}>{leader.role}</div>
+                <h3 className={styles.leaderName}>{leader.name}</h3>
+                <p className={styles.leaderBio}>{leader.bio}</p>
+              </div>
+            </div>
+
+            <button className={styles.carouselArrow} onClick={next} aria-label="Next">
+              <ChevronRight size={22} />
+            </button>
+          </div>
+
+          <div className={styles.carouselDots}>
+            {leaders.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === leaderIdx ? styles.dotActive : ''}`}
+                onClick={() => setLeaderIdx(i)}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>

@@ -835,3 +835,130 @@
     margin-bottom: 32px;
   }
 }
+
+/* Leadership Carousel */
+.leadershipSection {
+  padding: 100px 0;
+  background: #0f1419;
+}
+.leadershipHead {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+.leadershipTitle {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 14px 0 14px;
+  letter-spacing: -0.02em;
+}
+.leadershipSub {
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.leaderCarousel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.carouselArrow {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.carouselArrow:hover {
+  background: rgba(74,123,167,0.25);
+  border-color: rgba(74,123,167,0.6);
+}
+.leaderCard {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 32px;
+  align-items: center;
+  animation: fadeInLeader 0.5s ease;
+}
+@keyframes fadeInLeader {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.leaderImgWrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a2028;
+}
+.leaderImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.leaderRole {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6B8FBF;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.leaderName {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+.leaderBio {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 0;
+}
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+.dot:hover { background: rgba(255,255,255,0.4); }
+.dotActive {
+  background: #6B8FBF;
+  transform: scale(1.25);
+}
+@media (max-width: 768px) {
+  .leaderCard {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 22px;
+  }
+  .leaderImgWrap { max-width: 240px; margin: 0 auto; }
+  .carouselArrow { width: 38px; height: 38px; }
+}
