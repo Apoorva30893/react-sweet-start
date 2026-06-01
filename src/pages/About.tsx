@@ -135,7 +135,7 @@ export default function About() {
     className={styles.pageHeroImg}
   />
   <div className={styles.pageHeroBadge}>
-    <img src="/2.jpg" alt="Make in India" className={styles.makeInIndiaImg} />
+    <img src="/2.png" alt="Make in India" className={styles.makeInIndiaImg} />
   </div>
 </div>
 
