@@ -59,7 +59,7 @@ const categories: Category[] = [
           {
             name: 'Ball Nose End Mills',
             desc: 'Tapered ball nose tools for high-precision 3D surface machining and die/mould finishing.',
-            image: '/RMTT_PPT.pdf_(4).png',
+            image: '/10.png',
             specs: [
               { label: 'Radius tolerance', value: '±0.005 mm' },
               { label: 'Flutes', value: '2 / 4' },
@@ -71,7 +71,7 @@ const categories: Category[] = [
           {
             name: 'General Purpose End Mills',
             desc: 'Neutral geometry for everyday milling across mild steel, stainless and non-ferrous materials.',
-            image: '/RMTT_PPT.pdf_(3).png',
+            image: '/9.png',
             specs: [
               { label: 'Flutes', value: '3 / 4' },
               { label: 'Helix', value: '38° – 45°' },
@@ -83,7 +83,7 @@ const categories: Category[] = [
           {
             name: 'High-Performance End Mills',
             desc: 'Variable helix, unequal indexing and advanced coatings for vibration-free machining of hardened steels.',
-            image: '/RMTT_PPT.pdf_(1).png',
+            image: '/7.png',
             specs: [
               { label: 'Hardness range', value: 'up to 65 HRC' },
               { label: 'Flutes', value: '4 / 5 / 6' },
@@ -91,6 +91,30 @@ const categories: Category[] = [
               { label: 'Cooling', value: 'Internal coolant' },
             ],
             application: 'Hardened tool steels, Inconel, titanium, stainless 17-4PH',
+          },
+          {
+            name: 'Finishing Application Solid Carbide Endmill',
+            desc: 'Multi-flute reamers producing H7 or finer bores with Ra 0.4 µm surface finish.',
+            image: '/8.png',
+            specs: [
+              { label: 'Tolerance', value: 'H7 / H6' },
+              { label: 'Flutes', value: '6 / 8' },
+              { label: 'Surface finish', value: 'Ra 0.4 µm' },
+              { label: 'Coating', value: 'TiCN / TiAlN' },
+            ],
+            application: 'Hydraulic spool bores, gearbox shafts, valve bodies',
+          },
+          {
+            name: 'Tapered Ball Nose Endmill',
+            desc: 'Ideal for HSC machining  and 3D machining Stable center geometery',
+            image: '/11.png',
+            specs: [
+              { label: 'Tolerance', value: 'H7 / H6' },
+              { label: 'Flutes', value: '6 / 8' },
+              { label: 'Surface finish', value: 'Ra 0.4 µm' },
+              { label: 'Coating', value: 'TiCN / TiAlN' },
+            ],
+            application: 'stainless steel, Tatanium alloys',
           },
         ],
       },
@@ -102,7 +126,7 @@ const categories: Category[] = [
           {
             name: 'Step Drills',
             desc: 'Multi-diameter holes finished in a single pass, eliminating tool changes and centring operations.',
-            image: '/RMTT_PPT.pdf_(7).png',
+            image: '/13T.png',
             specs: [
               { label: 'Steps', value: '2 – 5' },
               { label: 'Point angle', value: '140°' },
@@ -114,7 +138,7 @@ const categories: Category[] = [
           {
             name: 'High-Polish Carbide Drills',
             desc: 'Mirror-polished flutes for excellent chip evacuation in deep-hole and stainless steel drilling.',
-            image: '/RMTT_PPT.pdf_(7).png',
+            image: '/12.png',
             specs: [
               { label: 'L/D ratio', value: '3×D – 12×D' },
               { label: 'Coolant', value: 'Internal, 70 bar' },
@@ -122,25 +146,6 @@ const categories: Category[] = [
               { label: 'Diameter', value: '1 – 16 mm' },
             ],
             application: 'Stainless steel, titanium, aluminium deep-hole drilling',
-          },
-        ],
-      },
-      {
-        id: 'sc-reamers',
-        title: 'Reamers',
-        blurb: 'Solid carbide reamers with precision-ground margins for bore finishing in tight tolerance applications.',
-        products: [
-          {
-            name: 'Solid Carbide Reamers',
-            desc: 'Multi-flute reamers producing H7 or finer bores with Ra 0.4 µm surface finish.',
-            image: '/RMTT_PPT.pdf_(2).png',
-            specs: [
-              { label: 'Tolerance', value: 'H7 / H6' },
-              { label: 'Flutes', value: '6 / 8' },
-              { label: 'Surface finish', value: 'Ra 0.4 µm' },
-              { label: 'Coating', value: 'TiCN / TiAlN' },
-            ],
-            application: 'Hydraulic spool bores, gearbox shafts, valve bodies',
           },
         ],
       },

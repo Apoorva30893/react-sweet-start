@@ -110,15 +110,17 @@ export default function About() {
 
     {/* LEFT — text */}
     <div className={styles.pageHeroLeft}>
-      <div className="section-eyebrow" style={{
-        background: 'rgba(74,123,167,0.18)',
-        color: '#6B8FBF',
-        border: '1px solid rgba(74,123,167,0.3)',
-        borderRadius: '4px',
-        padding: '4px 10px',
-        display: 'inline-block',
-        marginBottom: '20px',
-      }}>
+      <div className="section-eyebrow" 
+      // style={{
+      //   background: 'rgba(74,123,167,0.18)',
+      //   color: '#6B8FBF',
+      //   border: '1px solid rgba(74,123,167,0.3)',
+      //   borderRadius: '4px',
+      //   padding: '4px 10px',
+      //   display: 'inline-block',
+      //   marginBottom: '20px',
+      // }}
+      >
         Who we are
       </div>
 
