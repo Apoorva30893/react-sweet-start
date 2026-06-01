@@ -384,6 +384,51 @@ export default function About() {
         </div>
       </section>
 
+      {/* Leadership Carousel */}
+      <section className={styles.leadershipSection}>
+        <div className="container">
+          <div className={styles.leadershipHead}>
+            <div className="section-eyebrow">Leadership</div>
+            <h2 className={styles.leadershipTitle}>Founder & directors</h2>
+            <p className={styles.leadershipSub}>
+              Meet the people who shape RMTT's vision, engineering and customer commitment.
+            </p>
+          </div>
+
+          <div className={styles.leaderCarousel}>
+            <button className={styles.carouselArrow} onClick={prev} aria-label="Previous">
+              <ChevronLeft size={22} />
+            </button>
+
+            <div className={styles.leaderCard} key={leader.name}>
+              <div className={styles.leaderImgWrap}>
+                <img src={leader.img} alt={leader.name} className={styles.leaderImg} />
+              </div>
+              <div className={styles.leaderBody}>
+                <div className={styles.leaderRole}>{leader.role}</div>
+                <h3 className={styles.leaderName}>{leader.name}</h3>
+                <p className={styles.leaderBio}>{leader.bio}</p>
+              </div>
+            </div>
+
+            <button className={styles.carouselArrow} onClick={next} aria-label="Next">
+              <ChevronRight size={22} />
+            </button>
+          </div>
+
+          <div className={styles.carouselDots}>
+            {leaders.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === leaderIdx ? styles.dotActive : ''}`}
+                onClick={() => setLeaderIdx(i)}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className={styles.ctaSection}>
         <div className="container">
