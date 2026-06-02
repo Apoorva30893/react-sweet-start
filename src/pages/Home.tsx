@@ -17,7 +17,7 @@ const products = [
     tags: ['Step drills', 'Ball nose', 'Tapered', 'Thread mills'],
     color: '#4A7BA7',
     bg: '#EBF2F9',
-    image: '/4.png',
+    image: `${import.meta.env.BASE_URL}4.png`,
   },
   {
     id: 'pcd',
@@ -29,7 +29,7 @@ const products = [
     tags: ['Multi-step reamers', 'Face mills', 'Valve seat tools', 'Injector reamers'],
     color: '#1A8A5C',
     bg: '#E8F5EE',
-    image: '/5.png',
+    image: `${import.meta.env.BASE_URL}5.png`,
   },
   {
     id: 'brazed',
@@ -41,7 +41,7 @@ const products = [
     tags: ['T-slot cutters', 'Shell mills', 'Step reamers', 'Custom'],
     color: '#B07A1A',
     bg: '#FBF4E6',
-    image: '/6.png',
+    image: `${import.meta.env.BASE_URL}6.png`,
   },
 ];
 

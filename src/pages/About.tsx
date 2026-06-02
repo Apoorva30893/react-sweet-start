@@ -162,12 +162,12 @@ export default function About() {
     {/* RIGHT — image in contained square */}
 <div className={styles.pageHeroRight} style={{ position: 'relative' }}>
   <img
-    src="/0.jpg"
+    src={`${import.meta.env.BASE_URL}0.jpg`}
     alt="RMTT SAACKE CNC grinding machine in operation"
     className={styles.pageHeroImg}
   />
   <div className={styles.pageHeroBadge}>
-    <img src="/2.png" alt="Make in India" className={styles.makeInIndiaImg} />
+    <img src={`${import.meta.env.BASE_URL}2.png`} alt="Make in India" className={styles.makeInIndiaImg} />
   </div>
 </div>
 
