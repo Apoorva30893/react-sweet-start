@@ -15,15 +15,7 @@ interface Slide {
 
 // ── DATA — use the 4 uploaded product images ─────────────────────────────────
 const slides: Slide[] = [
-  // {
-  //   id: 'pcd-reamer',
-  //   image: '/T1.png',                        // PCD reamer — horizontal close-up
-  //   category: 'PCD Tools',
-  //   title: 'Valve Seat & Guide Reamer',
-  //   subtitle: 'Steel body + PCD tipped multi-step reamer for cylinder head profiling. Improved cycle time and profile accuracy vs brazed carbide.',
-  //   tag: 'Automotive · Grey cast iron',
-  //   href: '/products#pcd',
-  // },
+  
   {
     id: 'solid-carbide-drills',
     image: '/T2.png',                       // solid carbide drill set — vertical
@@ -49,6 +41,15 @@ const slides: Slide[] = [
     title: 'Module Shank PCD Reamer',
     subtitle: '5 steps consolidated in one tool. Vc=210 m/min, feed 0.3 mm/rev on BT30. Module 60 runout compensation for smooth piston movement.',
     tag: 'Precision bore finishing · Module 60/70',
+    href: '/products#pcd',
+  },
+  {
+    id: 'pcd-tools',
+    image: '/17.png',                        // PCD reamer — horizontal close-up
+    category: 'PCD Tools',
+    title: 'Seameless Brazing',
+    subtitle: 'Solid Carbide Steel body + Well balanced PCD aterial High quality pocket seats Perfect smooth flutes.',
+    tag: 'Automotive · Grey cast iron',
     href: '/products#pcd',
   },
 ];

@@ -10,6 +10,7 @@ const productOptions = [
 ];
 
 const navLinks: Array<{ label: string; href: string; dropdown?: typeof productOptions }> = [
+  { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Products', href: '/products', dropdown: productOptions },
   { label: 'Applcations', href: '/applications' },
@@ -59,9 +60,8 @@ export default function Navbar() {
 
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.inner}>
-          <Link to="/" className={styles.logo}>
-            <img src="/1.png" alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
-          </Link>
+          <img src="/1.png" alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
+          
 
           <nav className={styles.nav} aria-label="Main navigation">
             {navLinks.map(link =>
