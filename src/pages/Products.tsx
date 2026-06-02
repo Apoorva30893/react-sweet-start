@@ -41,7 +41,7 @@ const categories: Category[] = [
     headline: 'Solid Carbide End Mills, Drills & Reamers',
     intro:
       'High-performance solid carbide tools engineered for steel, titanium, stainless steel and aluminium. High-polish flutes, micro cutting edge geometry, internal coolant options and advanced PVD coatings — all ground on 5-axis SAACKE machines to sub-micron tolerances.',
-    image: '/13.png',
+    image: `${import.meta.env.BASE_URL}13.png`,
     features: [
       'High-polish flutes for superior surface finish',
       'Micro cutting edge geometry for precision',
@@ -59,7 +59,7 @@ const categories: Category[] = [
           {
             name: 'Ball Nose End Mills',
             desc: 'Tapered ball nose tools for high-precision 3D surface machining and die/mould finishing.',
-            image: '/10.png',
+            image: `${import.meta.env.BASE_URL}10.png`,
             // specs: [
             //   { label: 'Radius tolerance', value: '±0.005 mm' },
             //   { label: 'Flutes', value: '2 / 4' },
@@ -71,7 +71,7 @@ const categories: Category[] = [
           {
             name: 'General Purpose End Mills',
             desc: 'Neutral geometry for everyday milling across mild steel, stainless and non-ferrous materials.',
-            image: '/9.png',
+            image: `${import.meta.env.BASE_URL}9.png`,
             // specs: [
             //   { label: 'Flutes', value: '3 / 4' },
             //   { label: 'Helix', value: '38° – 45°' },
@@ -83,7 +83,7 @@ const categories: Category[] = [
           {
             name: 'High-Performance End Mills',
             desc: 'Variable helix, unequal indexing and advanced coatings for vibration-free machining of hardened steels.',
-            image: '/7.png',
+            image: `${import.meta.env.BASE_URL}7.png`,
             // specs: [
             //   { label: 'Hardness range', value: 'up to 65 HRC' },
             //   { label: 'Flutes', value: '4 / 5 / 6' },
@@ -95,7 +95,7 @@ const categories: Category[] = [
           {
             name: 'Finishing Application Solid Carbide Endmill',
             desc: 'Multi-flute reamers producing H7 or finer bores with Ra 0.4 µm surface finish.',
-            image: '/8.png',
+            image: `${import.meta.env.BASE_URL}8.png`,
             // specs: [
             //   { label: 'Tolerance', value: 'H7 / H6' },
             //   { label: 'Flutes', value: '6 / 8' },
@@ -107,7 +107,7 @@ const categories: Category[] = [
           {
             name: 'Tapered Ball Nose Endmill',
             desc: 'Ideal for HSC machining  and 3D machining Stable center geometery',
-            image: '/11.png',
+            image: `${import.meta.env.BASE_URL}11.png`,
         // specs: [
         //       { label: 'Tolerance', value: 'H7 / H6' },
         //       { label: 'Flutes', value: '6 / 8' },
@@ -126,7 +126,7 @@ const categories: Category[] = [
           {
             name: 'Step Drills',
             desc: 'Multi-diameter holes finished in a single pass, eliminating tool changes and centring operations.',
-            image: '/13T.png',
+            image: `${import.meta.env.BASE_URL}13T.png`,
             // specs: [
             //   { label: 'Steps', value: '2 – 5' },
             //   { label: 'Point angle', value: '140°' },
@@ -138,7 +138,7 @@ const categories: Category[] = [
           {
             name: 'High-Polish Carbide Drills',
             desc: 'Mirror-polished flutes for excellent chip evacuation in deep-hole and stainless steel drilling.',
-            image: '/12.png',
+            image: `${import.meta.env.BASE_URL}12.png`,
             // specs: [
             //   { label: 'L/D ratio', value: '3×D – 12×D' },
             //   { label: 'Coolant', value: 'Internal, 70 bar' },
@@ -157,7 +157,7 @@ const categories: Category[] = [
           {
             name: 'Special Multi-Grooving Tool',
             desc: 'Combination tools designed around your component drawing to cut multiple grooves in one pass.',
-            image: '/RMTT PPT.pdf (8).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (8).png`,
             // specs: [
             //   { label: 'Profile count', value: 'up to 6 grooves' },
             //   { label: 'Cycle time', value: '40 – 70% reduction' },
@@ -178,7 +178,7 @@ const categories: Category[] = [
     headline: 'PCD Reamers, Milling Cutters & Special Tools',
     intro:
       'Polycrystalline diamond tipped tools engineered with VOLLMER Wire EDM edge machining and precision lapping. Ideal for high-volume aluminium die-casting, CFRP and non-ferrous applications demanding superior surface finish, dimensional accuracy and extended tool life.',
-    image: '/22.png',
+    image: `${import.meta.env.BASE_URL}22.png`,
     features: [
       'VOLLMER Wire EDM + precision lapping edges',
       'Seamless brazing with no heat distortion',
@@ -196,7 +196,7 @@ const categories: Category[] = [
           {
             name: 'Multi-Step PCD Reamers',
             desc: 'Up to 5 diameters in a single tool — replaces multiple operations on aluminium cylinder heads.',
-            image: '/22.png',
+            image: `${import.meta.env.BASE_URL}22.png`,
             // specs: [
             //   { label: 'Steps', value: 'up to 5' },
             //   { label: 'Connection', value: 'Module 70 / HSK' },
@@ -208,7 +208,7 @@ const categories: Category[] = [
           {
             name: 'Injector Bore Reamers',
             desc: 'Long-taper PCD reamers producing Ra 0.4 µm injector bores in cast iron and aluminium.',
-            image: '/5.png',
+            image: `${import.meta.env.BASE_URL}5.png`,
             // specs: [
             //   { label: 'Body', value: 'Solid carbide' },
             //   { label: 'Taper length', value: '90 – 180 mm' },
@@ -227,7 +227,7 @@ const categories: Category[] = [
           {
             name: 'PCD Profile Milling Cutters',
             desc: 'Custom-profile mills for boot grooves, seal channels and OD profiles in one finishing pass.',
-            image: '/RMTT PPT.pdf (12).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (12).png`,
             // specs: [
             //   { label: 'Tips', value: 'Z-3 / Z-4 PCD' },
             //   { label: 'Profile tolerance', value: '±0.01 mm' },
@@ -238,7 +238,7 @@ const categories: Category[] = [
           {
             name: 'PCD Form Grooving Cutters',
             desc: 'Outside-diameter grooving cutters producing complex shapes on rotating workpieces.',
-            image: '/RMTT PPT.pdf (14).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (14).png`,
             // specs: [
             //   { label: 'OD range', value: '20 – 120 mm' },
             //   { label: 'Tips', value: 'PCD brazed' },
@@ -256,7 +256,7 @@ const categories: Category[] = [
           {
             name: 'PCD Thread Mills',
             desc: 'Helical interpolation thread mills with PCD tips for long-running threading on aluminium parts.',
-            image: '/RMTT PPT.pdf (11).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (11).png`,
             // specs: [
             //   { label: 'Thread range', value: 'M3 – M30' },
             //   { label: 'Pitch', value: '0.5 – 3.5 mm' },
@@ -274,7 +274,7 @@ const categories: Category[] = [
           {
             name: 'Valve Seat & Guide Tools',
             desc: 'Steel body with multiple PCD tips finishing seat angles and guide bore concentric to ±0.005 mm.',
-            image: '/RMTT PPT.pdf (15).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (15).png`,
             // specs: [
             //   { label: 'Concentricity', value: '±0.005 mm' },
             //   { label: 'Angles', value: '30° / 45° / 60°' },
@@ -295,7 +295,7 @@ const categories: Category[] = [
     headline: 'Brazed Carbide Special Tools & Solutions',
     intro:
       'Cost-effective alternative to solid carbide and PCD for large-diameter, special-profile and high-volume applications. Tungsten carbide tips seamlessly brazed to steel bodies and ground on SAACKE 5-axis machines for precise edge geometry.',
-    image: '/RMTT PPT.pdf (10).png',
+    image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (10).png`,
     features: [
       '5-axis SAACKE ground cutting edges',
       'Seamless brazing with no heat distortion',
@@ -313,7 +313,7 @@ const categories: Category[] = [
           {
             name: 'Shell Milling Cutter',
             desc: 'Face milling cutter for hydraulic and excavator components — large diameters at competitive cost.',
-            image: '/RMTT PPT.pdf (20).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (20).png`,
             // specs: [
             //   { label: 'Diameter', value: '80 mm (up to 250 mm)' },
             //   { label: 'Inserts', value: 'Brazed carbide' },
@@ -324,7 +324,7 @@ const categories: Category[] = [
           {
             name: 'T-Slot Cutters',
             desc: 'Single and double-ended T-slot profile cutters for machine tool tables and fixturing slots.',
-            image: '/RMTT PPT.pdf (19).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (19).png`,
             // specs: [
             //   { label: 'Slot widths', value: '8 – 36 mm' },
             //   { label: 'Configuration', value: 'Single / double-ended' },
@@ -342,7 +342,7 @@ const categories: Category[] = [
           {
             name: 'Two-Step Reamer',
             desc: 'Multi-diameter bore finishing with brazed carbide tips — single tool replaces two reaming operations.',
-            image: '/RMTT PPT.pdf (18).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (18).png`,
             // specs: [
             //   { label: 'Steps', value: '2' },
             //   { label: 'Tolerance', value: 'H7' },
@@ -380,7 +380,7 @@ const categories: Category[] = [
           {
             name: 'Special Form Tools',
             desc: 'Customer-specific profile tools ground to drawing — bring us the part, we will engineer the tool.',
-            image: '/RMTT PPT.pdf (17).png',
+            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (17).png`,
             // specs: [
             //   { label: 'Profile tolerance', value: '±0.01 mm' },
             //   { label: 'Materials', value: 'Steel, cast iron, Al' },
