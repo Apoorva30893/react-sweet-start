@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="container">
           <div className={styles.grid}>
             <div className={styles.brand}>
-              <img src="/1.png" alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
+              <img src={`${import.meta.env.BASE_URL}1.png`} alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
               
             </div>
 
@@ -91,7 +91,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className="container">
           <div className={styles.bottomInner}>
-            <img src="/2.png" alt="Make in India" className={styles.makeInIndiaImage} />
+            <img src={`${import.meta.env.BASE_URL}2.png`} alt="Make in India" className={styles.makeInIndiaImage} />
             <span>© {new Date().getFullYear()} Riddhi Machine Tool Technology. All rights reserved.</span>
             <div className={styles.bottomLinks}>
               <a href="#">Privacy Policy</a>

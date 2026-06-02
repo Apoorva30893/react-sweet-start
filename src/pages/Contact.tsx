@@ -244,7 +244,7 @@ export default function Contact() {
 
               <div className={styles.toolsPreview}>
                 <img
-                  src="/image002.png"
+                  src={`${import.meta.env.BASE_URL}image002.png`}
                   alt="Riddhi cutting tool range"
                   className={styles.toolsImg}
                 />

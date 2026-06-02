@@ -18,7 +18,7 @@ const slides: Slide[] = [
   
   {
     id: 'solid-carbide-drills',
-    image: '/T2.png',                       // solid carbide drill set — vertical
+    image: `${import.meta.env.BASE_URL}T2.png`,                       // solid carbide drill set — vertical
     category: 'Solid Carbide',
     title: 'Step Drills & Solid Carbide Drills',
     subtitle: 'High-polish flute geometry for single-pass multi-diameter drilling. Internal coolant options available for aluminium die casting and steel.',
@@ -27,7 +27,7 @@ const slides: Slide[] = [
   },
   {
     id: 'pcd-hsk-reamer',
-    image: '/40.png',                       // PCD HSK shank reamer — 3/4 view
+    image: `${import.meta.env.BASE_URL}40.png`,                       // PCD HSK shank reamer — 3/4 view
     category: 'PCD Tools',
     title: 'HSK Shank PCD Reamer',
     subtitle: 'VOLLMER Wire EDM + lapping edges. Module 70 / HSK connection with Z-4 PCD tips and internal coolant supply. One-shot finish in aluminium.',
@@ -36,7 +36,7 @@ const slides: Slide[] = [
   },
   {
     id: 'pcd-module-reamer',
-    image: '/42.png',                       // PCD module shank reamer — front view
+    image: `${import.meta.env.BASE_URL}42.png`,                       // PCD module shank reamer — front view
     category: 'PCD Tools',
     title: 'Module Shank PCD Reamer',
     subtitle: '5 steps consolidated in one tool. Vc=210 m/min, feed 0.3 mm/rev on BT30. Module 60 runout compensation for smooth piston movement.',
@@ -45,7 +45,7 @@ const slides: Slide[] = [
   },
   {
     id: 'pcd-tools',
-    image: '/17.png',                        // PCD reamer — horizontal close-up
+    image: `${import.meta.env.BASE_URL}17.png`,                        // PCD reamer — horizontal close-up
     category: 'PCD Tools',
     title: 'Seameless Brazing',
     subtitle: 'Solid Carbide Steel body + Well balanced PCD aterial High quality pocket seats Perfect smooth flutes.',
