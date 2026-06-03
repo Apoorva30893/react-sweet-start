@@ -29,7 +29,7 @@ const slides: Slide[] = [
     id: 'pcd-hsk-reamer',
     image: `${import.meta.env.BASE_URL}40.png`,                       // PCD HSK shank reamer — 3/4 view
     category: 'PCD Tools',
-    title: 'HSK Shank PCD Reamer',
+    title: 'PCD Form Grooving Cutters',
     subtitle: 'VOLLMER Wire EDM + lapping edges. Module 70 / HSK connection with Z-4 PCD tips and internal coolant supply. One-shot finish in aluminium.',
     tag: 'Two-wheeler · Aluminium die casting',
     href: '/products#pcd',
@@ -38,7 +38,7 @@ const slides: Slide[] = [
     id: 'pcd-module-reamer',
     image: `${import.meta.env.BASE_URL}42.png`,                       // PCD module shank reamer — front view
     category: 'PCD Tools',
-    title: 'Module Shank PCD Reamer',
+    title: 'PCD Step Three Step Reamer',
     subtitle: '5 steps consolidated in one tool. Vc=210 m/min, feed 0.3 mm/rev on BT30. Module 60 runout compensation for smooth piston movement.',
     tag: 'Precision bore finishing · Module 60/70',
     href: '/products#pcd',
