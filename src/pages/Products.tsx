@@ -42,6 +42,7 @@ const categories: Category[] = [
     intro:
       'High-performance solid carbide tools engineered for steel, titanium, stainless steel and aluminium. High-polish flutes, micro cutting edge geometry, internal coolant options and advanced PVD coatings — all ground on 5-axis SAACKE machines to sub-micron tolerances.',
     image: `${import.meta.env.BASE_URL}13.png`,
+    
     features: [
       'High-polish flutes for superior surface finish',
       'Micro cutting edge geometry for precision',
@@ -178,7 +179,7 @@ const categories: Category[] = [
     headline: 'PCD Reamers, Milling Cutters & Special Tools',
     intro:
       'Polycrystalline diamond tipped tools engineered with VOLLMER Wire EDM edge machining and precision lapping. Ideal for high-volume aluminium die-casting, CFRP and non-ferrous applications demanding superior surface finish, dimensional accuracy and extended tool life.',
-    image: `${import.meta.env.BASE_URL}22.png`,
+    image: `${import.meta.env.BASE_URL}PCD-shanks.png`,
     features: [
       'VOLLMER Wire EDM + precision lapping edges',
       'Seamless brazing with no heat distortion',
