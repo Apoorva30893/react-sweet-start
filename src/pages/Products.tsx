@@ -189,12 +189,12 @@ const categories: Category[] = [
     ],
     subcategories: [
       {
-        id: 'pcd-reamers',
-        title: 'PCD Reamers',
-        blurb: 'Multi-step and single-step diamond reamers delivering 5–10× the life of carbide in non-ferrous machining.',
+        id: 'pcd-tools',
+        title: 'PCD Tools',
+        blurb: 'Multi-step and single-step diamond delivering 5–10× the life of carbide in non-ferrous machining.',
         products: [
           {
-            name: 'Multi-Step PCD Reamers',
+            name: 'Single-Step & Multi-Step PCD Tools',
             desc: 'Up to 5 diameters in a single tool — replaces multiple operations on aluminium cylinder heads.',
             image: `${import.meta.env.BASE_URL}22.png`,
             // specs: [
@@ -206,8 +206,8 @@ const categories: Category[] = [
             application: 'Aluminium cylinder heads, gearbox housings',
           },
           {
-            name: 'Injector Bore Reamers',
-            desc: 'Long-taper PCD reamers producing Ra 0.4 µm injector bores in cast iron and aluminium.',
+            name: 'Injector Bore PCD Tool',
+            desc: 'Solid carbide body with PCD tipped.Long taper finish 0.4 Ra and size consistence with visible high quality finish.',
             image: `${import.meta.env.BASE_URL}5.png`,
             // specs: [
             //   { label: 'Body', value: 'Solid carbide' },
@@ -215,7 +215,50 @@ const categories: Category[] = [
             //   { label: 'Surface finish', value: 'Ra 0.4 µm' },
             //   { label: 'Tip', value: 'PCD' },
             // ],
-            application: 'Diesel/petrol injector seats in cylinder heads',
+            application: ' Cy head injector bore for 4Wheeler',
+          },
+          {
+            name: 'Master Cylender- Main Bore PCD Tool',
+            desc: 'Solid carbide body with PCD. Challenge: Surface finish and clear from blow holes ',
+            image: `${import.meta.env.BASE_URL}28.png`,
+            // specs: [
+            //   { label: 'Body', value: 'Solid carbide' },
+            //   { label: 'Taper length', value: '90 – 180 mm' },
+            //   { label: 'Surface finish', value: 'Ra 0.4 µm' },
+            //   { label: 'Tip', value: 'PCD' },
+            // ],
+            application: 'Master main bore',
+          },
+        ],
+      },
+      {
+        id: 'pcd-reamers',
+        title: 'PCD Reamers',
+        blurb: 'Multi-step and single-step diamond reamers delivering 5–10× the life of carbide in non-ferrous machining.',
+        products: [
+          {
+            name: 'Two-Wheeler Shock Absorber',
+            desc: 'It is Aluminum Die Casting material. Used for Precision hole finishing (reaming) operation.',
+            image: `${import.meta.env.BASE_URL}38.png`,
+            // specs: [
+            //   { label: 'Steps', value: 'up to 5' },
+            //   { label: 'Connection', value: 'Module 70 / HSK' },
+            //   { label: 'Cutting speed', value: 'Vc = 210 m/min' },
+            //   { label: 'Tip', value: 'Z-4 PCD' },
+            // ],
+            application: 'Achieve high dimensional accuracy and superior surface finish for smooth piston movement',
+          },
+          {
+            name: 'PCD Step Three Step Reamer',
+            desc: 'It is Aluminum Die Casting material. Used for Precision hole finishing (reaming) operation.',
+            image: `${import.meta.env.BASE_URL}42.png`,
+            // specs: [
+            //   { label: 'Steps', value: 'up to 5' },
+            //   { label: 'Connection', value: 'Module 70 / HSK' },
+            //   { label: 'Cutting speed', value: 'Vc = 210 m/min' },
+            //   { label: 'Tip', value: 'Z-4 PCD' },
+            // ],
+            application: 'Aerospace component finish reaming',
           },
         ],
       },
@@ -228,6 +271,17 @@ const categories: Category[] = [
             name: 'PCD Profile Milling Cutters',
             desc: 'Custom-profile mills for boot grooves, seal channels and OD profiles in one finishing pass.',
             image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (12).png`,
+            // specs: [
+            //   { label: 'Tips', value: 'Z-3 / Z-4 PCD' },
+            //   { label: 'Profile tolerance', value: '±0.01 mm' },
+            //   { label: 'Body', value: 'Steel' },
+            // ],
+            application: 'CV joint boot grooves, transmission seal channels',
+          },
+          {
+            name: 'Boot & Seal groove milling',
+            desc: 'Solid carbide body, Z-4 High quality PCD tips.It has internal coolant supplyand one shot finish. Highest seal groove surace and Consistent profile accuracy achieved',
+            image: `${import.meta.env.BASE_URL}36.png`,
             // specs: [
             //   { label: 'Tips', value: 'Z-3 / Z-4 PCD' },
             //   { label: 'Profile tolerance', value: '±0.01 mm' },
@@ -308,7 +362,7 @@ const categories: Category[] = [
       {
         id: 'bc-milling',
         title: 'Milling Cutters',
-        blurb: 'Large-diameter face, shell and slot milling cutters with brazed carbide tips.',
+        blurb: 'Large-diameter face, Engineered for hydraulic and excavator component machining,shell and slot milling cutters with brazed carbide tips.',
         products: [
           {
             name: 'Shell Milling Cutter',
@@ -319,12 +373,12 @@ const categories: Category[] = [
             //   { label: 'Inserts', value: 'Brazed carbide' },
             //   { label: 'Body', value: 'Heat-treated steel' },
             // ],
-            application: 'Hydraulic valve blocks, excavator castings',
+            application: 'Designed to deliver consistent performance and machining efficiency in demanding industrial applications:Hydraulic valve blocks, excavator castings',
           },
           {
             name: 'T-Slot Cutters',
             desc: 'Single and double-ended T-slot profile cutters for machine tool tables and fixturing slots.',
-            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (19).png`,
+            image: `${import.meta.env.BASE_URL}46.png`,
             // specs: [
             //   { label: 'Slot widths', value: '8 – 36 mm' },
             //   { label: 'Configuration', value: 'Single / double-ended' },
@@ -336,13 +390,13 @@ const categories: Category[] = [
       },
       {
         id: 'bc-reamers',
-        title: 'Reamers & Boring Tools',
+        title: 'Reamers',
         blurb: 'Multi-diameter reamers and brazed boring bars for large bores beyond solid carbide range.',
         products: [
           {
             name: 'Two-Step Reamer',
             desc: 'Multi-diameter bore finishing with brazed carbide tips — single tool replaces two reaming operations.',
-            image: `${import.meta.env.BASE_URL}RMTT PPT.pdf (18).png`,
+            image: `${import.meta.env.BASE_URL}45.png`,
             // specs: [
             //   { label: 'Steps', value: '2' },
             //   { label: 'Tolerance', value: 'H7' },
@@ -350,33 +404,24 @@ const categories: Category[] = [
             // ],
             application: 'Hydraulic cylinders, gearbox bores',
           },
-          {
-            name: 'Brazed Boring Bars',
-            desc: 'Fine boring bars with brazed carbide tips for precision hole finishing on large workpieces.',
-            // specs: [
-            //   { label: 'Diameter range', value: '25 – 150 mm' },
-            //   { label: 'Tolerance', value: 'IT6 achievable' },
-            //   { label: 'Body', value: 'Steel or carbide-reinforced' },
-            // ],
-            application: 'Engine blocks, large hydraulic bores',
-          },
+         
         ],
       },
       {
         id: 'bc-special',
-        title: 'Special Form & Multi-Grooving',
+        title: 'Special Form ',
         blurb: 'Customer-specific profiles brazed and ground to drawing — the workhorse of our brazed range.',
         products: [
-          {
-            name: 'Multi-Grooving Tool',
-            desc: 'Hydraulic manifold spool bore tool combining several grooves and chamfers — proven 70% cycle-time reduction.',
-            // specs: [
-            //   { label: 'Profiles', value: 'up to 8 in one pass' },
-            //   { label: 'Cycle time', value: '70% reduction' },
-            //   { label: 'Body', value: 'Steel + brazed carbide' },
-            // ],
-            application: 'Hydraulic manifold spool bores',
-          },
+          // {
+          //   name: 'Multi-Grooving Tool',
+          //   desc: 'Hydraulic manifold spool bore tool combining several grooves and chamfers — proven 70% cycle-time reduction.',
+          //   // specs: [
+          //   //   { label: 'Profiles', value: 'up to 8 in one pass' },
+          //   //   { label: 'Cycle time', value: '70% reduction' },
+          //   //   { label: 'Body', value: 'Steel + brazed carbide' },
+          //   // ],
+          //   application: 'Hydraulic manifold spool bores',
+          // },
           {
             name: 'Special Form Tools',
             desc: 'Customer-specific profile tools ground to drawing — bring us the part, we will engineer the tool.',
