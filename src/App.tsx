@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
+import CategoryPage from './pages/CategoryPage';
 import Industries from './pages/Industries';
 import Technology from './pages/Technology';
 import Contact from './pages/Contact';
@@ -16,6 +17,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:categoryId" element={<CategoryPage />} />
         <Route path="/applications" element={<Industries />} />
         <Route path="/services" element={<Technology />} />
         <Route path="/contact" element={<Contact />} />

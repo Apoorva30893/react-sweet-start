@@ -4,9 +4,9 @@ import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const productOptions = [
-  { label: 'Solid Carbide', href: '/products#solid-carbide' },
-  { label: 'PCD', href: '/products#pcd' },
-  { label: 'Brazed Carbide', href: '/products#brazed' },
+  { label: 'Solid Carbide', href: '/products/solid-carbide' },
+  { label: 'PCD', href: '/products/pcd' },
+  { label: 'Brazed Carbide', href: '/products/brazed' },
 ];
 
 const navLinks: Array<{ label: string; href: string; dropdown?: typeof productOptions }> = [
