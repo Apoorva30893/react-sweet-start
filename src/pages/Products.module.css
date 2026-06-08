@@ -179,15 +179,15 @@
 .productImgWrap {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: 260px;
   background:
-    radial-gradient(ellipse 120% 80% at 50% 110%, #BFD4E8 0%, rgba(191,212,232,0) 60%),
-    linear-gradient(180deg, #FFFFFF 0%, #EAF1F8 55%, #D6E3EF 100%);
+    radial-gradient(ellipse 90% 60% at 70% 30%, #FFFFFF 0%, rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, #E8F0F8 0%, #CFE0EE 55%, #A8C5DE 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 0;
 }
 
 .productImgWrap::after {
@@ -199,6 +199,48 @@
   height: 80%;
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 70%);
   pointer-events: none;
+}
+
+/* Blueprint overlay — appears on hover */
+.productImgWrap::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background-image:
+    linear-gradient(rgba(0,40,85,0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,40,85,0.18) 1px, transparent 1px),
+    /* corner brackets via gradients */
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy));
+  background-size:
+    20px 20px,
+    20px 20px,
+    14px 1.5px, 1.5px 14px,
+    14px 1.5px, 1.5px 14px,
+    14px 1.5px, 1.5px 14px,
+    14px 1.5px, 1.5px 14px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,        0 0,
+    100% 0,     100% 0,
+    0 100%,     0 100%,
+    100% 100%,  100% 100%;
+  background-repeat: no-repeat;
+}
+
+.productCard:hover .productImgWrap::before {
+  opacity: 1;
 }
 
 .productImgWrap img {
@@ -219,26 +261,36 @@
 }
 
 .productBody {
-  padding: 18px 20px 20px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   flex: 1;
+  background: #eef0f2;
 }
 
 .productName {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
-  color: var(--navy);
+  color: #fff;
   margin: 0;
   line-height: 1.3;
+  background: var(--navy);
+  padding: 14px 20px;
+  letter-spacing: 0.01em;
 }
 
 .productDesc {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.55;
+  font-size: 14px;
+  color: #2b2b2b;
+  line-height: 1.6;
   margin: 0;
+  padding: 16px 20px 18px;
+}
+
+.specGrid, .appLine {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 16px;
 }
 
 .specGrid {

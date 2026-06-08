@@ -4,6 +4,7 @@ import { ChevronRight, ChevronLeft, ArrowRight, Settings, Gem, Layers, Wrench, C
 import styles from './Home.module.css';
 import { useReveal} from '../hooks/useReveal';
 import ProductShowcase from './ProductShowcase';
+import StatsBar from '../components/StatsBar';
 
 
 const products = [
@@ -164,6 +165,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <StatsBar />
 
       {/* Products */}
       <section className={styles.section}>
