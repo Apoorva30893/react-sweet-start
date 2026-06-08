@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppFab from './components/WhatsAppFab';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import CategoryPage from './pages/CategoryPage';
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/downloads" element={<TrustSignals />} />
       </Routes>
       <Footer />
+      <WhatsAppFab />
     </HashRouter>
   );
 }
