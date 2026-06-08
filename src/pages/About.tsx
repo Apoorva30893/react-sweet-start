@@ -174,6 +174,39 @@ export default function About() {
   </div>
 </section>
 
+      {/* Our Journey */}
+      <section className={styles.journeySection}>
+        <div className="container">
+          <div className={styles.journeyHead}>
+            <div className="section-eyebrow">Our journey</div>
+            <h2 className={styles.journeyTitle}>Milestones of innovation</h2>
+            <p className={styles.journeySub}>
+              From a 2013 trading startup to a precision tool manufacturer with German-grade capability.
+            </p>
+          </div>
+          <p className={styles.journeyIntro}>
+            We began our journey in 2013 as a startup trading company, laying the foundation for our presence in the precision tooling industry.
+          </p>
+          <div className={styles.timeline}>
+            {[
+              { year: '2017', text: 'The journey advanced with the establishment of a dedicated manufacturing unit for solid carbide tools, marking the shift from trading to production.' },
+              { year: '2018', text: 'A strategic investment in a 5-axis CNC tool grinding machine strengthened capabilities in high-precision tool manufacturing.' },
+              { year: '2020', text: 'The company expanded into PCD tool manufacturing with the addition of a Vollmer EDM machine, enabling advanced and specialized tooling solutions.' },
+              { year: '2022', text: 'Capacity and efficiency were further enhanced with the installation of a second CNC tool grinding machine.' },
+              { year: '2025', text: 'Precision and quality assurance reached new levels with the integration of a Walter Helichek Pro measuring machine for advanced inspection and quality control.' },
+            ].map(m => (
+              <div key={m.year} className={styles.timelineItem}>
+                <span className={styles.timelineDot} />
+                <div className={styles.timelineCard}>
+                  <div className={styles.timelineYear}>{m.year}</div>
+                  <p className={styles.timelineText}>{m.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
       <section className={styles.missionVisionSection}>
         <div className="container">
