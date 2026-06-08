@@ -201,6 +201,48 @@
   pointer-events: none;
 }
 
+/* Blueprint overlay — appears on hover */
+.productImgWrap::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background-image:
+    linear-gradient(rgba(0,40,85,0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,40,85,0.18) 1px, transparent 1px),
+    /* corner brackets via gradients */
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--navy), var(--navy));
+  background-size:
+    20px 20px,
+    20px 20px,
+    14px 1.5px, 1.5px 14px,
+    14px 1.5px, 1.5px 14px,
+    14px 1.5px, 1.5px 14px,
+    14px 1.5px, 1.5px 14px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,        0 0,
+    100% 0,     100% 0,
+    0 100%,     0 100%,
+    100% 100%,  100% 100%;
+  background-repeat: no-repeat;
+}
+
+.productCard:hover .productImgWrap::before {
+  opacity: 1;
+}
+
 .productImgWrap img {
   position: relative;
   z-index: 1;
