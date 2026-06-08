@@ -25,7 +25,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.55s ease-in-out;
+  transition: opacity 0.40s ease-in-out;
   will-change: opacity;
 }
 
@@ -34,11 +34,11 @@
 }
 
 .bgEnterNext {
-  animation: slideInFromRight 0.55s ease-out forwards;
+  animation: slideInFromRight 0.40s ease-out forwards;
 }
 
 .bgEnterPrev {
-  animation: slideInFromLeft 0.55s ease-out forwards;
+  animation: slideInFromLeft 0.40s ease-out forwards;
 }
 
 @keyframes slideInFromRight {

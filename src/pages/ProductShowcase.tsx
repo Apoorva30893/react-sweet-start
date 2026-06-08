@@ -45,7 +45,7 @@ const slides: Slide[] = [
   },
   {
     id: 'pcd-tools',
-    image: `${import.meta.env.BASE_URL}17.png`,                        // PCD reamer — horizontal close-up
+    image: `${import.meta.env.BASE_URL}Pcd-tools.png`,                        // PCD reamer — horizontal close-up
     category: 'PCD Tools',
     title: 'Seameless Brazing',
     subtitle: 'Solid Carbide Steel body + Well balanced PCD aterial High quality pocket seats Perfect smooth flutes.',
