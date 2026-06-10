@@ -36,12 +36,23 @@
 
 .brand {}
 
+.logoImg {
+  display: inline-block;
+  height: 56px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-bottom: 18px;
+}
+
 .logo {
   height: 40px;
   width: auto;
   object-fit: contain;
   margin-bottom: 16px;
-  /* invert logo for dark bg — we'll use brightness filter for steel blue logo */
   filter: brightness(0) invert(1);
   opacity: 0.9;
 }
