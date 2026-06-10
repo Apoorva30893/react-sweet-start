@@ -60,7 +60,10 @@ export default function Navbar() {
 
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.inner}>
-          <img src={`${import.meta.env.BASE_URL}1.png`} alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
+          <Link to="/" className={styles.logo} aria-label="Riddhi Machine Tool Technology — Home">
+            <img src={`${import.meta.env.BASE_URL}1.png`} alt="Riddhi Machine Tool Technology" className={styles.logoImg} />
+          </Link>
+          
           
 
           <nav className={styles.nav} aria-label="Main navigation">
