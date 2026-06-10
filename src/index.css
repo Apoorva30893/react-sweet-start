@@ -5,6 +5,7 @@
 }
 
 :root {
+  color-scheme: light only;
   /* Brand colors — Fraisa-inspired deep navy + steel blue */
   --navy: #002855;
   --navy-mid: #003B73;
@@ -48,15 +49,28 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: 'Source Sans 3', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
-  background: var(--white);
+  background: var(--white) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+/* Force light mode — ignore OS dark preference */
+@media (prefers-color-scheme: dark) {
+  :root, body {
+    background: #ffffff !important;
+    color: var(--text) !important;
+  }
 }
 
 #root {
