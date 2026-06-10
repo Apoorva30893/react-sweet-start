@@ -13,7 +13,7 @@ const milestones: Milestone[] = [
   { year: '2025', text: 'Integration of a Walter Helicheck Pro measuring machine for advanced inspection and quality control.' },
 ];
 
-export default function JourneyTimeline(): JSX.Element {
+export default function JourneyTimeline() {
   return (
     <section className={styles.section}>
       <div className="container">
