@@ -368,7 +368,7 @@
 
 /* Bottom CTA */
 .bottomCta {
-  background: var(--navy);
+  background: #fff;
   padding: 72px 0;
   text-align: center;
 }
@@ -376,13 +376,13 @@
 .ctaTitle {
   font-size: 28px;
   font-weight: 700;
-  color: #fff;
+  color: var(--navy);
   margin-bottom: 12px;
 }
 
 .ctaSub {
   font-size: 15px;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-secondary);
   line-height: 1.65;
   max-width: 520px;
   margin: 0 auto 32px;

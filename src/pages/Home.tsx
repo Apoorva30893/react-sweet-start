@@ -123,31 +123,7 @@ export default function Home() {
   return (
     <main>
       <ProductShowcase />
-      {/* Hero */}
-      {/* <section className={styles.hero}>
-        <div className={`container ${styles.heroContent}`}>
-          <div className={styles.heroText}>
-            <div className="section-eyebrow">Make in India · German Standards</div>
-            <h1 className={styles.heroH1}>
-              Precision cutting tools<br />
-              engineered for<br />
-              <span className={styles.heroAccent}>demanding applications</span>
-            </h1>
-            <p className={styles.heroSub}>
-              Solid carbide, PCD and brazed carbide solutions manufactured on 5-axis SAACKE grinding and VOLLMER Wire EDM — serving automotive, aerospace and precision engineering.
-            </p>
-          </div>
-          <div
-            ref={heroStatsReveal.ref}
-            className={`${styles.heroStats} ${styles.revealStagger} ${heroStatsReveal.shown ? styles.revealStaggerShown : ''}`}
-          >
-            {stats.map(s => (
-              <StatItem key={s.value} value={s.value} label={s.label} start={heroStatsReveal.shown} />
-            ))}
-          </div>
-        </div>
-      </section> */}
-
+      
       {/* Industry strip */}
       <section className={styles.industryStrip}>
         <div className={`container ${styles.industryInner}`}>
