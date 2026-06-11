@@ -218,8 +218,10 @@
 
 /* Industry strip */
 .industryStrip {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border-light);
+  background: rgba(242, 245, 248, 0.6);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding: 14px 0;
 }
 
