@@ -1,4 +1,4 @@
-/* Top utility bar — frosted glass with visible blur */
+/* Top utility bar — light frosted glass */
 .topBar {
   position: fixed;
   top: 0;
@@ -10,10 +10,10 @@
   align-items: center;
 
   /* Light frosted glass — no dark theme */
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: saturate(200%) blur(16px);
   backdrop-filter: saturate(200%) blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
@@ -40,7 +40,7 @@
 }
 .topBarLink:hover { opacity: 0.65; }
 
-/* Main header — frosted navy glass, highly visible */
+/* Main header — light frosted glass, highly visible */
 .header {
   position: fixed;
   top: 36px;
@@ -48,27 +48,27 @@
   right: 0;
   z-index: 100;
 
-  /* Glassmorphism: lowered opacity so blur is visible, strong saturation */
-  background: rgba(0, 40, 85, 0.35);
+  /* Light glassmorphism: white-based frosted glass */
+  background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: saturate(200%) blur(18px);
   backdrop-filter: saturate(200%) blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 20px rgba(0, 30, 64, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 40, 85, 0.06);
 
   transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 /* Scrolled state: slightly more opaque for readability */
 .header.scrolled {
-  background: rgba(0, 40, 85, 0.55);
-  box-shadow: 0 6px 24px rgba(0, 30, 64, 0.2);
-  border-bottom-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 6px 24px rgba(0, 30, 64, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.85);
 }
 
 /* Fallback for browsers without backdrop-filter */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .topBar { background: #E6E9ED; }
-  .header { background: var(--navy); }
+  .topBar { background: #ffffff; }
+  .header { background: #ffffff; }
 }
 
 .inner {
@@ -87,8 +87,8 @@
   align-items: center;
   background: #fff;
   padding: 6px 14px;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
 .logoImg {
@@ -113,22 +113,22 @@
 
 .navLink {
   font-size: 15px;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 500;
+  color: var(--navy);
   padding: 22px 18px;
   border-radius: 0;
-  transition: background 0.15s;
+  transition: background 0.15s ease;
   white-space: nowrap;
   border-bottom: 3px solid transparent;
 }
 
 .navLink:hover {
-  background: rgba(255,255,255,0.06);
+  background: rgba(0, 40, 85, 0.04);
 }
 
 .navLink.active {
-  background: rgba(255,255,255,0.06);
-  border-bottom-color: #fff;
+  background: rgba(0, 40, 85, 0.04);
+  border-bottom-color: var(--navy);
   font-weight: 600;
 }
 
@@ -155,21 +155,21 @@
   white-space: nowrap;
   letter-spacing: 0.02em;
 
-  /* Glassmorphism navbar CTA */
-  background: rgba(255, 255, 255, 0.1);
+  /* Glassmorphism navbar CTA — brand tinted */
+  background: rgba(0, 40, 85, 0.75);
   -webkit-backdrop-filter: saturate(160%) blur(8px);
   backdrop-filter: saturate(160%) blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 2px 8px rgba(0, 30, 64, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 30, 64, 0.12);
 
   transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .cta:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--navy);
-  border-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 16px rgba(0, 30, 64, 0.15);
+  background: rgba(0, 40, 85, 0.9);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 30, 64, 0.18);
   transform: translateY(-1px);
 }
 
@@ -179,15 +179,19 @@
   justify-content: center;
   width: 38px;
   height: 38px;
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 0;
-  transition: background 0.15s;
+  border-radius: 8px;
+  color: var(--navy);
+  transition: background 0.15s ease;
+
+  /* Glassmorphism menu button */
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: saturate(160%) blur(8px);
+  backdrop-filter: saturate(160%) blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .menuBtn:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(0, 40, 85, 0.06);
 }
 
 .mobileMenu {
@@ -196,18 +200,18 @@
   padding: 8px 0;
   gap: 0;
 
-  /* Glassmorphism mobile menu */
-  background: rgba(0, 40, 85, 0.55);
+  /* Light glassmorphism mobile menu */
+  background: rgba(255, 255, 255, 0.85);
   -webkit-backdrop-filter: saturate(200%) blur(18px);
   backdrop-filter: saturate(200%) blur(18px);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 32px rgba(0, 30, 64, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px rgba(0, 30, 64, 0.1);
 }
 
 .mobileLink {
   font-size: 15px;
   font-weight: 500;
-  color: #fff;
+  color: var(--navy);
   padding: 14px 24px;
   border-radius: 0;
   border-left: 3px solid transparent;
@@ -216,8 +220,8 @@
 
 .mobileLink:hover,
 .mobileLink.active {
-  background: rgba(255, 255, 255, 0.08);
-  border-left-color: #fff;
+  background: rgba(0, 40, 85, 0.04);
+  border-left-color: var(--navy);
 }
 
 .mobileCta {
@@ -228,22 +232,22 @@
   padding: 12px;
   border-radius: 10px;
   text-align: center;
-  color: var(--navy);
+  color: #fff;
 
   /* Glassmorphism CTA button in mobile menu */
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 40, 85, 0.8);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 4px 16px rgba(0, 30, 64, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 30, 64, 0.12);
 
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .mobileCta:hover {
-  background: rgba(255, 255, 255, 1);
+  background: rgba(0, 40, 85, 0.95);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 30, 64, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 30, 64, 0.18);
 }
 
 @media (max-width: 900px) {
@@ -273,47 +277,47 @@
   flex-direction: column;
   padding: 6px 0;
   z-index: 110;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 12px 12px;
   overflow: hidden;
 
-  /* Glassmorphism dropdown */
-  background: rgba(0, 40, 85, 0.65);
+  /* Light glassmorphism dropdown */
+  background: rgba(255, 255, 255, 0.88);
   -webkit-backdrop-filter: saturate(200%) blur(16px);
   backdrop-filter: saturate(200%) blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 40px rgba(0, 30, 64, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 40px rgba(0, 30, 64, 0.12);
 }
 
 .dropdownItem {
   display: block;
   padding: 12px 20px;
   font-size: 14px;
-  color: #fff;
+  color: var(--navy);
   border-left: 3px solid transparent;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .dropdownItem:hover {
-  background: rgba(255,255,255,0.08);
-  border-left-color: #fff;
+  background: rgba(0, 40, 85, 0.04);
+  border-left-color: var(--navy);
 }
 
 .mobileSubMenu {
   display: flex;
   flex-direction: column;
-  background: rgba(0,0,0,0.15);
+  background: rgba(0, 40, 85, 0.03);
 }
 
 .mobileSubLink {
   display: block;
   padding: 10px 24px 10px 44px;
   font-size: 14px;
-  color: rgba(255,255,255,0.85);
+  color: var(--text-secondary);
   border-left: 3px solid transparent;
-  transition: background 0.15s;
+  transition: background 0.15s ease;
 }
 
 .mobileSubLink:hover {
-  background: rgba(255,255,255,0.06);
-  border-left-color: #fff;
+  background: rgba(0, 40, 85, 0.04);
+  border-left-color: var(--navy);
 }
