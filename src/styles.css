@@ -138,7 +138,8 @@
   }
 
   body {
-    background-color: var(--color-background);
+    /* Allow the mesh gradient from index.css to show through */
+    background-color: transparent;
     color: var(--color-foreground);
   }
 }
