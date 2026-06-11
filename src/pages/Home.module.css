@@ -551,12 +551,25 @@
   font-size: 14px;
   font-weight: 600;
   color: var(--blue-light);
-  transition: gap 0.2s;
+  padding: 8px 16px;
+  border-radius: 10px;
+
+  /* Glassmorphism tech link */
+  background: rgba(255, 255, 255, 0.45);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  backdrop-filter: saturate(160%) blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 40, 85, 0.06);
+
+  transition: gap 0.2s ease, color 0.2s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
 }
 
 .techLink:hover {
   gap: 9px;
-  color: rgba(74,123,167,0.4);
+  color: var(--blue);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 6px 18px rgba(0, 40, 85, 0.1);
+  transform: translateY(-1px);
 }
 
 .techRight {
