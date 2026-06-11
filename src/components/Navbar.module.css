@@ -186,9 +186,14 @@
   display: flex;
   flex-direction: column;
   padding: 8px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
   gap: 0;
-  background: var(--navy);
+
+  /* Glassmorphism mobile menu */
+  background: rgba(0, 40, 85, 0.55);
+  -webkit-backdrop-filter: saturate(200%) blur(18px);
+  backdrop-filter: saturate(200%) blur(18px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 30, 64, 0.2);
 }
 
 .mobileLink {
@@ -198,30 +203,39 @@
   padding: 14px 24px;
   border-radius: 0;
   border-left: 3px solid transparent;
-  transition: background 0.15s;
+  transition: background 0.2s ease;
 }
 
 .mobileLink:hover,
 .mobileLink.active {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.08);
   border-left-color: #fff;
 }
 
 .mobileCta {
   display: block;
   margin: 12px 24px 8px;
-  background: #fff;
-  color: var(--navy);
   font-size: 15px;
   font-weight: 600;
   padding: 12px;
-  border-radius: 0;
+  border-radius: 10px;
   text-align: center;
-  transition: background 0.15s;
+  color: var(--navy);
+
+  /* Glassmorphism CTA button in mobile menu */
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 30, 64, 0.15);
+
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .mobileCta:hover {
-  background: var(--blue-xlight);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 30, 64, 0.2);
 }
 
 @media (max-width: 900px) {
