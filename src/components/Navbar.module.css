@@ -1,12 +1,14 @@
-/* Top utility bar (light grey, Fraisa-style) */
+/* Top utility bar — subtle frosted glass */
 .topBar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 101;
-  background: #E6E9ED;
-  border-bottom: 1px solid #D4D9DE;
+  background: rgba(230, 233, 237, 0.72);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid rgba(212, 217, 222, 0.55);
   height: 36px;
   display: flex;
   align-items: center;
@@ -35,16 +37,29 @@
 }
 .topBarLink:hover { opacity: 0.65; }
 
-/* Main header (deep navy, flat) */
+/* Main header — subtle frosted navy glass */
 .header {
   position: fixed;
   top: 36px;
   left: 0;
   right: 0;
   z-index: 100;
-  background: var(--navy);
-  border-bottom: 0;
-  transition: box-shadow 0.25s;
+  background: rgba(0, 40, 85, 0.78);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  backdrop-filter: saturate(150%) blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.header.scrolled {
+  background: rgba(0, 40, 85, 0.88);
+  box-shadow: 0 4px 18px rgba(0, 30, 64, 0.18);
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topBar { background: #E6E9ED; }
+  .header { background: var(--navy); }
 }
 
 .header.scrolled {
