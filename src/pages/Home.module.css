@@ -751,38 +751,80 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
-  color: var(--navy);
   font-size: 15px;
   font-weight: 600;
   padding: 13px 24px;
-  border-radius: 8px;
-  transition: background 0.2s, transform 0.15s;
+  border-radius: 12px;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+
+  /* Glassmorphism primary CTA button */
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 8px 32px rgba(0, 40, 85, 0.1),
+    0 2px 6px rgba(0, 40, 85, 0.04);
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
 }
 
 .ctaBtnPrimary:hover {
-  background: var(--blue-xlight);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 12px 40px rgba(0, 40, 85, 0.14),
+    0 0 20px rgba(61, 111, 160, 0.2);
   transform: translateY(-2px);
+}
+
+.ctaBtnPrimary:active {
+  transform: scale(0.98) translateY(0);
 }
 
 .ctaBtnSecondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
-  color: var(--navy);
   font-size: 15px;
   font-weight: 500;
   padding: 13px 24px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.25);
-  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  border-radius: 12px;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+
+  /* Glassmorphism outline CTA button */
+  background: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 6px 24px rgba(0, 40, 85, 0.06);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.2s ease,
+    box-shadow 0.25s ease,
+    transform 0.15s ease;
 }
 
 .ctaBtnSecondary:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.45);
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 10px 32px rgba(0, 40, 85, 0.1);
   transform: translateY(-2px);
+}
+
+.ctaBtnSecondary:active {
+  transform: scale(0.98) translateY(0);
 }
 
 @media (max-width: 768px) {
