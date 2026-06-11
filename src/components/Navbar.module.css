@@ -40,33 +40,35 @@
 }
 .topBarLink:hover { opacity: 0.65; }
 
-/* Main header — subtle frosted navy glass */
+/* Main header — frosted navy glass, highly visible */
 .header {
   position: fixed;
   top: 36px;
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(0, 40, 85, 0.45);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  backdrop-filter: saturate(180%) blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.25s, box-shadow 0.25s, border-color 0.25s;
+
+  /* Glassmorphism: lowered opacity so blur is visible, strong saturation */
+  background: rgba(0, 40, 85, 0.35);
+  -webkit-backdrop-filter: saturate(200%) blur(18px);
+  backdrop-filter: saturate(200%) blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 30, 64, 0.12);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* Scrolled state: slightly more opaque for readability */
 .header.scrolled {
-  background: rgba(0, 40, 85, 0.62);
-  box-shadow: 0 4px 18px rgba(0, 30, 64, 0.18);
+  background: rgba(0, 40, 85, 0.55);
+  box-shadow: 0 6px 24px rgba(0, 30, 64, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.18);
 }
 
 /* Fallback for browsers without backdrop-filter */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .topBar { background: #E6E9ED; }
   .header { background: var(--navy); }
-}
-
-.header.scrolled {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .inner {
