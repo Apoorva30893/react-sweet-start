@@ -26,8 +26,12 @@
 .stat {
   text-align: center;
   color: #fff;
-  padding: 8px 12px;
+  padding: 14px 16px;
   border-left: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-radius: var(--radius-md);
 }
 .stat:first-child { border-left: 0; }
 
