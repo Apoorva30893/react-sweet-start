@@ -382,15 +382,19 @@
     0 4px 12px rgba(0, 40, 85, 0.06);
 }
 
-/* ── Image panel — large, prominent, light grey bg ── */
+/* ── Image panel — large, prominent, glassmorphism light bg ── */
 .prodCardImg {
-  height: 280px;                 /* ← was 130px — nearly doubled */
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s;
   position: relative;
-  background: #EAECF0;           /* ← cool light grey, like MAPAL */
+
+  /* Glassmorphism image background */
+  background: rgba(234, 236, 240, 0.5);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  backdrop-filter: saturate(140%) blur(6px);
 }
 
 .prodCardImgProduct {
