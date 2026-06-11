@@ -5,10 +5,10 @@
   left: 0;
   right: 0;
   z-index: 101;
-  background: rgba(230, 233, 237, 0.72);
-  -webkit-backdrop-filter: saturate(160%) blur(10px);
-  backdrop-filter: saturate(160%) blur(10px);
-  border-bottom: 1px solid rgba(212, 217, 222, 0.55);
+  background: rgba(230, 233, 237, 0.45);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid rgba(212, 217, 222, 0.4);
   height: 36px;
   display: flex;
   align-items: center;
