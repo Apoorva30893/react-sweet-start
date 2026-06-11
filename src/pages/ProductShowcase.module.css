@@ -278,22 +278,32 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid #D0DCF0;
-  background: #fff;
-  color: #2B3A52;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 4;
   cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
-  box-shadow: 0 2px 10px rgba(43,58,82,0.1);
+  color: #2B3A52;
+
+  /* Glassmorphism arrow button */
+  background: rgba(255, 255, 255, 0.65);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5) inset,
+    0 4px 16px rgba(0, 40, 85, 0.08);
+
+  transition: background 0.25s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.25s ease;
 }
 
 .arrow:hover {
-  background: #4A7BA7;
-  border-color: #4A7BA7;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #4A7BA7;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 8px 24px rgba(0, 40, 85, 0.12);
   transform: translateY(-50%) scale(1.08);
 }
 
