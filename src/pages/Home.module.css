@@ -254,16 +254,23 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
-  background: #fff;
-  border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 5px 5px;
-  transition: border-color 0.2s, color 0.2s;
+  padding: 5px 12px;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Glassmorphism industry tag */
+  background: rgba(255, 255, 255, 0.55);
+  -webkit-backdrop-filter: saturate(160%) blur(8px);
+  backdrop-filter: saturate(160%) blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 40, 85, 0.04);
 }
 
 .industryTag:hover {
   border-color: var(--blue);
   color: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 40, 85, 0.08);
 }
 
 /* Section */
